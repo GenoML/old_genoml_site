@@ -1,0 +1,9 @@
+{
+  "docs": {
+    "Getting Started": ["overview","setup","usage"],
+    "Examples": ["example1","example2"],
+    "Deployment": ["docker"],
+    "API Reference": ["cli"],
+    "Contributing ": ["contribute",["roadmap"]]
+  }
+}
