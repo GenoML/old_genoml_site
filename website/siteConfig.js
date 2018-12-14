@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'GenoML', // Title for your website.
   tagline: ' Automated Machine Learning (AutoML) for Genomic',
   url: 'https://genoml.github.io', // Your website URL
-  baseUrl: '/genoml.github.io/', // Base URL for your project */
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
