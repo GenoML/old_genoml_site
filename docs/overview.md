@@ -21,7 +21,7 @@ Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Hiro
 # Affiliations
 F.F. and R.H.C. - University Illinois Urbana Champagne. 
 
-R.J.M. - University of Murcia. 
+R.J.M. and J.A.B. - University of Murcia. 
 
 C.B. and A.B.S. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health). 
 
