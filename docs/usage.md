@@ -142,23 +142,6 @@ Full GenoML usage:
        genoml model-tune --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
        genoml model-validate --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
 
-# Comments, suggestions, collaborations
-Please email mike@datatecnica.com. 
-
-# Team
-Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Alissa Dillman, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
-
-# Affiliations
-F.F. - University Illinois Urbana Champagne  
-M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l
-
-# Acknowledgement
-This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois Urbana Champagne, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
-
-# Citations
-
-# Links
-
 # Additional details
 ##### Some of whats going on under the hood of genoML
 #### PRSice command
@@ -180,6 +163,3 @@ $pathToGenoML/otherPackages/gcta64 --bfile $geno.forSblup --cojo-file $gwas --co
 $pathToGenoML/otherPackages/plink --bfile $geno --indep-pairwise 10000 1 0.1 --out $prefix.temp
 $pathToGenoML/otherPackages/plink --bfile $geno --extract $prefix.temp.prune.in --recode A --out $prefix.reduced_genos
 ~~~~
-
-# License
-Blah Blah open source
