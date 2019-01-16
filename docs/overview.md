@@ -19,11 +19,11 @@ Please visit our google group to discuss bugs, feture requests and start general
 Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
 
 # Affiliations
-F.F. and R.H.C. - University Illinois Urbana Champagne
-R.J.M. - University of Murcia
-C.B. and A.B.S. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health)
-H.I. - The Michael J. Fox Foundation and the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health)
-H.L. and M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l
+F.F. and R.H.C. - University Illinois Urbana Champagne. 
+R.J.M. - University of Murcia. 
+C.B. and A.B.S. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health). 
+H.I. - The Michael J. Fox Foundation and the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health). 
+H.L. and M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l. 
 
 # Acknowledgement
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois Urbana Champagne, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
