@@ -3,8 +3,8 @@ id: example1
 title: Example 1
 ---
 
-## Step-by-step examples 
-Please refer to the following quick examples for running GonML (for full `usage`, please refer to [Usage](#usage)):
+## Step-by-step example 
+Please refer to the following quick example for running GonML (for full `usage`, please refer to [Usage](#usage)):
 
 ### Step 1 - genoml data-prune:
 To perform `data-prune` only on `genotype` and `phenotype` data:
@@ -42,4 +42,3 @@ To perform external `model-validate`:
 
     python genoml.py model-validate --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
  
-test1
