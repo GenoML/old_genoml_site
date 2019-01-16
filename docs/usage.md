@@ -98,10 +98,7 @@ This is a big white-space delimited text file in the GCTA summary stats format.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
 # DETAILED COMMAND LINE OPTIONS AND EXAMPLE CODE
-### Step 1
-### Step 2
-### Step 3
-### Step 4
+### See example section
 
 # Comments, suggestions, collaborations
 Please email mike@datatecnica.com. 
