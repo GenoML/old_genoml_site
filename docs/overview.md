@@ -13,21 +13,28 @@ Although R and python have made it easy to experiment with machine learning, the
 **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates.
 
 # Comments, suggestions, collaborations
-Please email mike@datatecnica.com. 
+Please visit our google group to discuss bugs, feture requests and start general discussions.  This group can be found here [https://groups.google.com/forum/#!forum/genoml]. For other inquiries or collaborations, please email mike@datatecnica.com. 
 
 # Team
-Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Alissa Dillman, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
+Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
 
 # Affiliations
-F.F. - University Illinois Urbana Champagne  
-M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l
+F.F. and R.H.C. - University Illinois Urbana Champagne
+R.J.M. - University of Murcia
+C.B. and A.B.S. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health)
+H.I. - The Michael J. Fox Foundation and the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health)
+H.L. and M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l
 
 # Acknowledgement
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois Urbana Champagne, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
 
 # Citations
-
-# Links
+None quite yet, but we're working on it. ;-)
 
 # License
-Blah Blah open source
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
