@@ -11,3 +11,23 @@ Although R and python have made it easy to experiment with machine learning, the
 **GenoML** will automate the most tedious part of machine learning by intelligently exploring thousands of possible pipelines to find the best one for your data.
 
 **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates.
+
+# Comments, suggestions, collaborations
+Please email mike@datatecnica.com. 
+
+# Team
+Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Alissa Dillman, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
+
+# Affiliations
+F.F. - University Illinois Urbana Champagne  
+M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l
+
+# Acknowledgement
+This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois Urbana Champagne, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
+
+# Citations
+
+# Links
+
+# License
+Blah Blah open source
