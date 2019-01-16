@@ -7,23 +7,23 @@ title: Example 1
 Please refer to the following quick examples for running GonML (for full `usage`, please refer to [Usage](#usage)):
 
 ### Step 1 - genoml data-prune:
-To perform `data-prune` only on `genotype` and `pehnotype` data:
+To perform `data-prune` only on `genotype` and `phenotype` data:
 
     python genoml.py data-prune --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno 
 
-To perform `data-prune`  on `genotype`, `pehnotype` , `GWAS`, and `covariance` data:
+To perform `data-prune`  on `genotype`, `phenotype` , `GWAS`, and `covariance` data:
  
     python genoml.py data-prune --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt  
 
-To perform `data-prune`  on `genotype`, `pehnotype` , `GWAS`, `covariance`, and `additional` data:
+To perform `data-prune`  on `genotype`, `phenotype` , `GWAS`, `covariance`, and `additional` data:
 
     python genoml.py data-prune --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit  
 
-To perform `data-prune`  on `genotype`, `pehnotype` , `GWAS`, and `additional` data, as well as `Heritability estimate`:
+To perform `data-prune`  on `genotype`, `phenotype` , `GWAS`, and `additional` data, as well as `Heritability estimate`:
 
     python genoml.py data-prune --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2  
 
-To perform `data-prune`  on `genotype`, `pehnotype` , `GWAS`, `covariance`, and `additional` data, as well as `Heritability estimate`:
+To perform `data-prune`  on `genotype`, `phenotype` , `GWAS`, `covariance`, and `additional` data, as well as `Heritability estimate`:
 
     python genoml.py data-prune --geno-prefix=./exampleData/training --pheno-file=./exampleData/example.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.5 
 
