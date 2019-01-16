@@ -29,12 +29,6 @@ These include:
 [PRSiceV2](https://choishingwan.github.io/PRSice/) for additional variant pre-filtering.  
 [Docker](https://www.docker.com) for containerizing all this so it actually works consistently.
 
-
-#### Installing 
-###### General
-###### Local binary
-###### Cloud container
-
 # BASIC WORKFLOW (AND NOTES)
 ![WORKFLOW](https://github.com/GenoML/genoml-core/blob/master/docs/workflowDiagram_Sept19th2018.png)
 #### Step 1: Prunes and extracts SNPs, merges input files and preps data for analysis 
