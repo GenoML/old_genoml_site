@@ -12,6 +12,8 @@ Although R and python have made it easy to experiment with machine learning, the
 
 **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates.
 
+**GenoML runs best on linux** either via interactive command line on your local systems, or as acontainer / cloud based API. 
+
 # Comments, suggestions, collaborations
 Please visit our google group to discuss bugs, feture requests and start general discussions.  This group can be found here [https://groups.google.com/forum/#!forum/genoml]. For other inquiries or collaborations, please email mike@datatecnica.com. 
 
