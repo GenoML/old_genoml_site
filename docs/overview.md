@@ -18,7 +18,7 @@ Although R and python have made it easy to experiment with machine learning, the
 Please visit our google group to discuss bugs, feture requests and start general discussions.  This group can be found here [https://groups.google.com/forum/#!forum/genoml]. For other inquiries or collaborations, please email mike@datatecnica.com. 
 
 # Team
-Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Hirotaka Iwaki, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
+Faraz Faghri, Rafael Jordá Muñoz, Hampton Leonard, Cornelis Blauwendraat, Hirotaka Iwaki, Lana Sargeant, genoML hackathon participants, Roy H. Campbell, Andrew B. Singleton, Juan A. Botia, Mike A. Nalls
 
 # Affiliations
 F.F. and R.H.C. - University Illinois Urbana Champagne. 
@@ -28,6 +28,8 @@ R.J.M. and J.A.B. - University of Murcia.
 C.B. and A.B.S. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health). 
 
 H.I. - The Michael J. Fox Foundation and the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health). 
+
+L.S. - School of Nursing, VCU Health, Geriatric Health Clinic, Virginia Commonwealth University (VCU).  
 
 H.L. and M.A.N. - Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health) and Data Tecnica Int'l. 
 
