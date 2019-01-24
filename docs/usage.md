@@ -61,7 +61,7 @@ Exported files are similar to step 2 but have the additional "tuned" flag in the
 ##### Fit your best / tuned model from steps 2 and / or 3 to an external dataset and see how it really performs.
 This phase is pretty straight forward, test your model in an external dataset. This could be a separate study or a withheld subset of the original dataset, but a separate study is always the best. A file with the suffix "confMatAtBestThresh_validation.txt" is also exported, which is a confusion matrix for the validation predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
 
-The only thing to make sure is that all parameters of interest exist in both datasets (training and validation).  In addition, these should be on the same numeric scale.
+The only thing to make sure is that all parameters of interest exist in both datasets (training and validation).  For example, make sure you have the same variants availible in the genotype files as well as the same phenotypes in the phenotpye files across training and validation. If you used any ".addit" or ".cov" files, these should be a mirror of the training phase as well. In addition, these should be on the same numeric scale. Put simply, missing predictors from training will kill the validation.
 
 # INPUT DATA (see example data)
 ##### Here is a quick walk through of input file formats and general suggestions. Please see examples in /exampleData.
