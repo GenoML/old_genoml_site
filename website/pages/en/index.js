@@ -196,7 +196,7 @@ class Index extends React.Component {
       return (
         <div className="productShowcaseSection paddingBottom">
           <h2>Users of GenoML</h2>
-          <p>GenoML is used in academia as well as industry. </p>
+          <p>GenoML is used by all these people in academia as well as industry </p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
             <a className="button" href={pageUrl('users.html')}>
