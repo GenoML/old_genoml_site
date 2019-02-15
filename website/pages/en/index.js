@@ -212,7 +212,7 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features /> 
-          <TryOut />
+          // <TryOut />
           <Showcase />
         </div>
       </div>
