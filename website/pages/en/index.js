@@ -168,6 +168,12 @@ class Index extends React.Component {
             imageAlign: 'left',
             title: '<i class="fab fa-500px"></i> Flexible',
           },
+          {
+            content: 'Supports targeted panels, microarrays, whole exome sequencing (WES), and whole genome sequencing (WGS).',
+            image: `${baseUrl}img/group.svg`,
+            imageAlign: 'left',
+            title: '<i class="fab fa-500px"></i> Five',
+          },
         ]}
       </Block>
     );
