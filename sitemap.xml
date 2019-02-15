@@ -9,6 +9,7 @@
 <url> <loc>https://genoml.github.io/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://genoml.github.io/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://genoml.github.io/docs/cli</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/cli" /> </url>
+<url> <loc>https://genoml.github.io/docs/community</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/community" /> </url>
 <url> <loc>https://genoml.github.io/docs/contribute</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/contribute" /> </url>
 <url> <loc>https://genoml.github.io/docs/docker</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/docker" /> </url>
 <url> <loc>https://genoml.github.io/docs/example1</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/example1" /> </url>
