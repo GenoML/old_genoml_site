@@ -4,7 +4,7 @@ title: The Command Line Interface (CLI)
 ---
 
 Detailed command line options:
-
+~~~~
      Usage:
        genoml data-prune  (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) [--gwas-file=<gwas_file>] [--cov-file=<cov_file>] [--herit=<herit>] [--addit-file=<addit_file>] [--temp-dir=<directory>]
        genoml model-train (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) [--n-cores=<n_cores>] [--train-speed=<train_speed>] [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--impute-data=<impute_data>]
@@ -44,3 +44,4 @@ Detailed command line options:
        genoml model-train --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
        genoml model-tune --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
        genoml model-validate --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
+~~~~
