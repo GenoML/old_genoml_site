@@ -15,6 +15,7 @@
 <url> <loc>https://genoml.github.io/docs/docker</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/docker" /> </url>
 <url> <loc>https://genoml.github.io/docs/example1</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/example1" /> </url>
 <url> <loc>https://genoml.github.io/docs/example2</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/example2" /> </url>
+<url> <loc>https://genoml.github.io/docs/help</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/help" /> </url>
 <url> <loc>https://genoml.github.io/docs/quick-start</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/quick-start" /> </url>
 <url> <loc>https://genoml.github.io/docs/roadmap</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/roadmap" /> </url>
 <url> <loc>https://genoml.github.io/docs/setup</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/setup" /> </url>
