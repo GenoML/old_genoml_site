@@ -151,8 +151,14 @@ class Index extends React.Component {
             title: 'Easy to use',
           },
           {
-            content: 'Using Docker, you can deploy to thousands of instances in matter of seconds.',
+            content: 'Supports targeted panels, microarrays, whole exome sequencing (WES), and whole genome sequencing (WGS).',
             image: `${baseUrl}img/gear.svg`,
+            imageAlign: 'top',
+            title: 'Flexible',
+          },
+          {
+            content: 'Using Docker, you can deploy to thousands of instances in matter of seconds.',
+            image: `${baseUrl}img/networking.svg`,
             imageAlign: 'top',
             title: 'Scalable',
           },
@@ -162,18 +168,12 @@ class Index extends React.Component {
             imageAlign: 'top',
             title: 'Open Source',
           },
-          {
-            content: 'Supports targeted panels, microarrays, whole exome sequencing (WES), and whole genome sequencing (WGS).',
-            image: `${baseUrl}img/group.svg`,
-            imageAlign: 'top',
-            title: 'Flexible',
-          },
-          {
+          /*{
             content: 'Supports targeted panels, microarrays, whole exome sequencing (WES), and whole genome sequencing (WGS).',
             image: `${baseUrl}img/group.svg`,
             imageAlign: 'top',
             title: 'Five',
-          },
+          },*/
         ]}
       </Block>
     );
