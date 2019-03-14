@@ -5,7 +5,8 @@ title: Usage
 
 ## Train the ML model
 This step performs data pruning as well as model training and tunning.
-**Example data:** You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, available from [here](https://github.com/ipdgc/GenoML-Brief-Intro/raw/master/exampleData.zip).
+
+**Example data:** You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, available at: https://github.com/ipdgc/GenoML-Brief-Intro/raw/master/exampleData.zip
 
 ### Basic 
 Requires `genotype` and `phenotype` data, run:
@@ -26,7 +27,8 @@ genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/tra
 ~~~~
 
 ### With heritability estimate
-**Note:** heritability estimate increases the runtime significaintly
+**Note:** heritability estimate increases the runtime significaintly.
+
 Using `genotype`, `phenotype` , `GWAS`, and `additional` data, as well as `Heritability estimate`, run:
 ~~~~
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2 --model-file=./exampleModel 
