@@ -1,10 +1,10 @@
 ---
-id: usage
-title: Usage
+id: workflow
+title: Workflow
 ---
 # QUICK SUMMARY
 
-GenoML is a package that enables users to easily run basic machine learning (ML) pipelines on genetic and genomic data.  The goal of this project is to democratize and simplify these sometimes complex analyses.  GenoML is machine learning made easier (for geneticists). Our development focus is automating the annoying and complicated aspects of most machine learning applications in genetics/genomics, from pre-filtering of SNPs to algorithm selection and validation testing.
+**GenoML** is a package that enables users to easily run basic machine learning (ML) pipelines on genetic and genomic data.  The goal of this project is to democratize and simplify these sometimes complex analyses.  GenoML is machine learning made easier (for geneticists). Our development focus is automating the annoying and complicated aspects of most machine learning applications in genetics/genomics, from pre-filtering of SNPs to algorithm selection and validation testing.
 
 We have included a command line binary for local computing but also a container for cloud applications (a web server is currently under development).
 
@@ -90,51 +90,6 @@ File suffix should be ".addit".
 #### GWAS (optional file)
 This is a big white-space delimited text file in the GCTA summary stats format.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
-
-# DETAILED COMMAND LINE OPTIONS AND EXAMPLE CODE
-### See example section for a quick walk through
-## Usage 
-Full GenoML usage:
-
-     Usage:
-       genoml data-prune  (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) [--gwas-file=<gwas_file>] [--cov-file=<cov_file>] [--herit=<herit>] [--addit-file=<addit_file>] [--temp-dir=<directory>]
-       genoml model-train (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) [--n-cores=<n_cores>] [--train-speed=<train_speed>] [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--impute-data=<impute_data>]
-       genoml model-tune (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--impute-data=<impute_data>] [--best-model-name=<best_model_name>]
-       genoml model-validate (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) (--valid-geno-prefix=valid_geno_prefix) (--valid-pheno-file=<valid_pheno_file>) [--valid-cov-file=<valid_cov_file>] [--valid-addit-file=<valid_addit_file>] [--n-cores=<n_cores>] [--impute-data=<impute_data>]  [--best-model-name=<best_model_name>]
-       genoml -h | --help
-       genoml --version
-
-     Options:
-       --geno-prefix=geno_prefix               Prefix with path to genotype files in PLINK format, *.bed, *.bim and *.fam.
-       --pheno-file=<pheno_file>               Path to the phenotype file in PLINK format, *.pheno.
-       --gwas-file=<gwas_file>                 Path to the GWAS file, if available.
-       --cov-file=<cov_file>                   Path to the covariance file, if available.
-       --herit=<herit>                         Heritability estimate of phenotype between 0 and 1, if available.
-       --addit-file=<addit_file>               Path to the additional file, if avialable.
-       --temp-dir=<directory>                  Directory for temporary files [default: ./tmp/].
-       --n-cores=<n_cores>                     Number of cores to be allocated for computation [default: 1].
-       --prune-prefix=prune_prefix             Prefix given to you at the end of pruning stage.
-       --train-speed=<train_speed>             Training speed: (ALL, FAST, FURIOUS, BOOSTED). Run all models, only  the fastest models, run slightly slower models, or just run boosted models which usually perform best when using genotype data [default: BOOSTED].
-       --cv-reps=<cv_reps>                     Number of cross-validation. An integer greater than 5. Effects the speed [default: 5].
-       --impute-data=<impute_data>             Imputation: (knn, median). Governs secondary imputation and data transformation [default: median].
-       --grid-search=<grid_search>             Grid search length for parameters, integer greater than 10, 30 or greater recommended, effects speed of initial tune [default: 10].
-       --best-model-name=<best_model_name>     Name for the best model [default: best_model].
-       --valid-geno-prefix=valid_geno_prefix   Prefix with path to the validation genotype files in PLINK format, *.bed, *.bim and *.fam.
-       --valid-pheno-file=<valid_pheno_file>   Path to the validation phenotype file in PLINK format, *.pheno.
-       --valid-cov-file=<valid_cov_file>       Path to the validation covariance file, if available.
-       --valid-addit-file=<valid_addit_file>   Path to the the validation additional file, if avialable.
-       -h --help                               Show this screen.
-       --version                               Show version.
-
-     Examples:
-       genoml data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno
-       genoml data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt
-       genoml data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit
-       genoml data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2
-       genoml data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.5
-       genoml model-train --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
-       genoml model-tune --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
-       genoml model-validate --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
 
 # Additional details
 ##### Some of whats going on under the hood of genoML
