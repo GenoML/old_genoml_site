@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting Started": ["overview","setup","usage"],
+    "Getting Started": ["overview","quick-start","usage"],
     "Examples": ["example1","example2"],
     "Deployment": ["docker"],
     "API Reference": ["cli"],
