@@ -2,7 +2,7 @@
   "docs": {
     "Getting Started": ["overview","quick-start","usage"],
     "Examples": ["example1","example2"],
-    "Deployment": ["docker"],
+    "How it works": ["Workflow"],
     "API Reference": ["cli"],
     "Contributing ": ["contribute",["roadmap"]]
   }
