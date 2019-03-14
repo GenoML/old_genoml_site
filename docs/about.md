@@ -27,8 +27,8 @@ School of Nursing, VCU Health, Geriatric Health Clinic, Virginia Commonwealth Un
 University of Murcia
 Data Tecnica International
 
-# Acknowledgement
+## Acknowledgement
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois at Urbana-Champaign, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
 
-# Citations
+## Citations
 None quite yet, but we're working on it. ;-)
