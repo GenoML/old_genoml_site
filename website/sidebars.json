@@ -1,6 +1,7 @@
 {
   "docs": {
-    "Getting Started": ["overview","quick-start","usage"],
+    "Intro": ["about","help","community"],
+    "Getting Started": ["quick-start","usage"],
     "Examples": ["example1","example2"],
     "How it works": ["Workflow"],
     "API Reference": ["cli"],
