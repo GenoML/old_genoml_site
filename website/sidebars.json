@@ -2,7 +2,6 @@
   "docs": {
     "Intro": ["about","help"],
     "Getting Started": ["quick-start","usage"],
-    "Examples": ["example1","example2"],
     "How it works": ["Workflow"],
     "API Reference": ["cli"],
     "Contributing ": ["contribute",["roadmap"]]
