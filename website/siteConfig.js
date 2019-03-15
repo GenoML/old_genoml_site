@@ -18,6 +18,14 @@ const users = [
     infoLink: 'https://nih.gov',
     pinned: true,
   },
+  {
+    caption: 'International Parkinson Disease Genomics Consortium (IPDGC)',
+    // You will need to prepend the image path with your baseUrl
+    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
+    image: '/img/users/IDPGC-logo-01.jpg',
+    infoLink: 'https://pdgenetics.org',
+    pinned: true,
+  },
 ];
 
 const siteConfig = {
