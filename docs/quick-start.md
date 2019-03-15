@@ -19,5 +19,5 @@ You can use the IPDGC (International Parkinson's Disease Genomics Consortium) ex
 
 ## Using the trained ML model for inference
 ~~~~
-genoml-inference --model-file=./exampleModel --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
+genoml-inference --model-file=./exampleModel --valid-dir=./exampleData --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
 ~~~~
