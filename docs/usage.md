@@ -67,3 +67,35 @@ File suffix should be ".addit".
 #### GWAS (optional file)
 This is a big white-space delimited text file in the GCTA summary stats format.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
+
+# BASIC WORKFLOW (AND NOTES ON OUTPUTS)
+![WORKFLOW](https://github.com/GenoML/genoml-core/blob/master/docs/workflowDiagram_Sept19th2018.png)
+#### Step 1: Prunes and extracts SNPs, merges input files and preps data for analysis 
+##### In this phase you build your dataset for machine learning to begin.
+In the autoMl workflow, different input data will trigger different SNPpruning workflows. In many scenarios we recommend PRSice as the option for pre-filtering variants. This method does a great job of incorporating external GWAS data and covariates as well (in case you think the covariates are important in SNP selection). If you specify external GWAS weights without also specifying heritability, PRSice will run. GCTA-sBLUP is also a solid option for SNP filtering incorporating external GWAS data but it cannot at this time incorporate covariates. GCTA-sBLUP will be implemented if you specify a heritability estiamte. Both methods allow for the highly recommended variant weighting options (using external GWAS summary statistics to weight variant allele dosages). If you have no covariates and no external GWAS summary statistics, default variant filtering in PLINK via LD pruning is the only option available. Pre-filtering of variants is mandatory as correlated predictors can really bias results for some algorithms and lead to overfitting.  
+
+At this phase, polygenic risk scores are also calculated using linear models and summary stats for these are exported (files with the suffix ".PRS_summary.txt").  These summary stats are either for continuous traits as a summary(lm()) in R or the AUC calculated using predicted probabilities, probabilities dummied at 0.50 for the prediction and probabilities dummied at the top left threshold from the initial ROC curve. A file with the suffix "confMatAtBestThresh_PRS.txt" is also exported, which is a confusion matrix for the PRS predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve. 
+
+#### Step 2: Train model and initial tune via grid search 
+##### Now that your dataset is built, train a bunch of different models and pick the best performing.
+Now that the data is reduced, start testing algorithms and building models.
+
+We generally recommend either the BOOSTED or ALL options here for the best balance of completeness and performance. Also, we recommend a minimum grid search interval of 30 and at least 10 iterations of cross validation. The current default is BOOSTED.
+
+Early on in this phase of analysis, we export files with the suffixes ".nzv" and ".highCor".  If you plan to rerun and/or tweak options, it may be good to exclude these parameters from your data in future analyses if possible as these are either near-zero variance parameters or highly correlated parameters that can lead to overfitting.
+
+Here all algorithms compete to perform best across cross validation.  The model with the highest mean R2 for continuous traits or highest mean AUC for discrete traits across all cross-validation iterations will be selected. You can view the runtimes and performance of each algorithm at this cross-validation and tuning phase in the files with suffixes "methodTimings.tab" and "methodPerformance.tab".  
+
+The best model will also be exported as an Rdata object with the suffix "bestModel.Rdata".  A variable importance matrix showing the relative contribution to predictions of each parameters from the "dataForML" file will be exported with the suffix "varImp.tab". Predictions from the best model in the training set will be exported in the file with the suffix "trainingSetPredicitions.tab", these predictions will be overfit since it is the training dataset ... the same applies to the contents of the file with the suffix "training_summary.txt" which mirrors the "PRS_sumamry.txt" file from the previous step. Additionally, PNG files containing density, ROC and/or regression plots for your best performing model will be output at this point. A standard confusion matrix (suffix "confMat.txt") with additional summary statistics will also be exported, although at this time, this is based off a simple dummying of predictions at a probability of case status at 0.50 for discrete phenotypes. A file with the suffix "confMatAtBestThresh_training.txt" is also exported, which is a confusion matrix for the training set predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
+
+#### Step 3: Secondary tuning via extended grid search and maximization of hyperparameters 
+##### This phase is a simple but sometimes time consuming extended tune of the best model from step 2.
+If you think a longer tune is the way to go, please feel free to run an extended tune on your best model.
+Exported files are similar to step 2 but have the additional "tuned" flag in the suffix.
+This is part of the default pipeline run in ```genoml-train``` and is highly reccomended.
+
+#### Step 4: External validation in test data 
+##### Fit your best / tuned model from steps 2 and / or 3 to an external dataset and see how it really performs.
+This phase is pretty straight forward, test your model in an external dataset. This could be a separate study or a withheld subset of the original dataset, but a separate study is always the best. A file with the suffix "confMatAtBestThresh_validation.txt" is also exported, which is a confusion matrix for the validation predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
+
+The only thing to make sure is that all parameters of interest exist in both datasets (training and validation).  In addition, these should be on the same numeric scale.
