@@ -3,7 +3,8 @@ id: quick-start
 title: Quick start
 ---
 
-Here are some quick get started exmaples, please checkout the documents for full usage.
+Here are some quick "get started" exmaples, please checkout the additional options and details in the (usage)[https://genoml.github.io/docs/usage] and (CLI)[https://genoml.github.io/docs/cli] links.
+As a note, when getting used to new software, including the ```-v``` or ```-vvv``` flags at the end of a line of code may help with debugging etc.
 
 ## Install 
 ~~~~
