@@ -151,19 +151,19 @@ class Index extends React.Component {
             title: 'Easy to use',
           },
           {
-            content: 'Supports targeted panels, microarrays, whole exome sequencing (WES), and whole genome sequencing (WGS).',
+            content: 'Supports commonly used genomics data formats.',
             image: `${baseUrl}img/gear.svg`,
             imageAlign: 'top',
             title: 'Flexible',
           },
           {
-            content: 'Using Docker, you can deploy to thousands of instances in matter of seconds.',
+            content: 'Easy setup to run multicore computations and deploy to thousands of instances in matter of seconds.',
             image: `${baseUrl}img/networking.svg`,
             imageAlign: 'top',
             title: 'Scalable',
           },
           {
-            content: 'GenoML is open source and welcome contributions. The structure let developers easily create and use their own extensions.',
+            content: 'GenoML is open source and welcomes contributions and collaborations. We are building a collaborative community for machine learning in genomics.',
             image: `${baseUrl}img/group.svg`,
             imageAlign: 'top',
             title: 'Open Source',
