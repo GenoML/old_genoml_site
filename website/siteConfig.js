@@ -30,7 +30,7 @@ const users = [
 
 const siteConfig = {
   title: 'GenoML', // Title for your website.
-  tagline: ' Automated Machine Learning (AutoML) for Genomic',
+  tagline: ' Automated Machine Learning (AutoML) for Genomics',
   url: 'https://genoml.github.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
