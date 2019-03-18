@@ -99,3 +99,26 @@ This is part of the default pipeline run in ```genoml-train``` and is highly rec
 This phase is pretty straight forward, test your model in an external dataset. This could be a separate study or a withheld subset of the original dataset, but a separate study is always the best. A file with the suffix "confMatAtBestThresh_validation.txt" is also exported, which is a confusion matrix for the validation predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
 
 The only thing to make sure is that all parameters of interest exist in both datasets (training and validation).  In addition, these should be on the same numeric scale.
+
+## Additional details
+##### Some of whats going on under the hood of genoML
+#### PRSice command
+~~~~
+Rscript $pathToGenoML/otherPackages/PRSice.R --binary-target T --prsice $pathToGenoML/otherPackages/PRSice_linux -n $cores --out $prefix.temp --pheno-file $pheno.pheno --cov-file $cov.cov -t $geno -b $gwas --print-snp --score std --perm 10000 --bar-levels 5E-8,4E-8,3E-8,2E-8,1E-8,9E-7,8E-7,7E-7,6E-7,5E-7,4E-7,3E-7,2E-7,1E-7,9E-6,8E-6,7E-6,6E-6,5E-6,4E-6,3E-6,2E-6,1E-6,9E-5,8E-5,7E-5,6E-5,5E-5,4E-5,3E-5,2E-5,1E-5,9E-4,8E-4,7E-4,6E-4,5E-4,4E-4,3E-4,2E-4,1E-4,9E-3,8E-3,7E-3,6E-3,5E-3,4E-3,3E-3,2E-3,1E-3,9E-2,8E-2,7E-2,6E-2,5E-2 --no-full --fastscore --beta --snp SNP --A1 A1 --A2 A2 --stat b --se se --pvalue p  
+~~~~
+or for continuous outcomes  
+~~~~
+Rscript $pathToGenoML/otherPackages/PRSice.R --prsice $pathToGenoML/otherPackages/PRSice_linux -n $cores --out $prefix.temp --pheno-file $pheno.pheno --cov-file $cov.cov -t $geno -b $gwas --print-snp --score std --perm 10000 --bar-levels 5E-8,4E-8,3E-8,2E-8,1E-8,9E-7,8E-7,7E-7,6E-7,5E-7,4E-7,3E-7,2E-7,1E-7,9E-6,8E-6,7E-6,6E-6,5E-6,4E-6,3E-6,2E-6,1E-6,9E-5,8E-5,7E-5,6E-5,5E-5,4E-5,3E-5,2E-5,1E-5,9E-4,8E-4,7E-4,6E-4,5E-4,4E-4,3E-4,2E-4,1E-4,9E-3,8E-3,7E-3,6E-3,5E-3,4E-3,3E-3,2E-3,1E-3,9E-2,8E-2,7E-2,6E-2,5E-2 --no-full --fastscore --binary-target F --beta --snp SNP --A1 A1 --A2 A2 --stat b --se se --pvalue p  
+~~~~
+#### GCTA-sBLUP command
+~~~~
+nsnps=`wc -l < $geno.bim | awk '{print $1}'`
+sbluplambda=$(echo "scale = 10; $nsnps*((1/$herit)-1)" | bc)
+$pathToGenoML/otherPackages/gcta64 --bfile $geno.forSblup --cojo-file $gwas --cojo-sblup $sbluplambda --cojo-wind 10000 --thread-num $cores --out $prefix.temp
+~~~~
+#### Plink LD pruning command
+~~~~
+$pathToGenoML/otherPackages/plink --bfile $geno --indep-pairwise 10000 1 0.1 --out $prefix.temp
+$pathToGenoML/otherPackages/plink --bfile $geno --extract $prefix.temp.prune.in --recode A --out $prefix.reduced_genos
+~~~~
+
