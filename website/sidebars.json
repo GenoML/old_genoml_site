@@ -2,7 +2,7 @@
   "docs": {
     "Intro": ["about","help"],
     "Getting Started": ["quick-start","usage"],
-    "How it works": ["Workflow"],
+    "How it works": ["workflow"],
     "API Reference": ["cli"],
     "Contributing ": ["contribute",["roadmap"]]
   }
