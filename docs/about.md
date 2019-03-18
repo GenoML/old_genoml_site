@@ -13,13 +13,17 @@ In order for machine learning software to truly be accessible to non-experts, we
 Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates. The current version is stable but under transition. We are moving towards a complete python build that integrates better tools for cloud computing as well as meta/federated learning methods (to keep data sharing safe and secure while working across data silos).
 
 ## Issues, suggestions, and collaboration
-Please report any issue or suggestions to the GenoML issues page at https://github.com/GenoML/genoml/issues
+
+Please report any issue or suggestions to the GenoML issues page at https://github.com/GenoML/genoml/issues.
+
 For other collaboration inquiries, please email mike@datatecnica.com
 
 ## Team
+
 Faraz Faghri (NIH, UIUC), Sayed Hadi Hashemi (UIUC), Hampton Leonard (NIH / DT), Cornelis Blauwendraat (NIH), Hirotaka Iwaki (NIH / MJFF / DT), Lana Sargeant (VCU), Rafael Jordá Muñoz (UM), Juan A. Botia (UM), Roy H. Campbell (UIUC), Andrew B. Singleton (NIH), Mike A. Nalls (NIH / DT)
 
 ## Affiliations
+
 Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)
 
 Laboratory of Neurogenetics, National Institute on Aging (National Institutes of Health)
@@ -33,7 +37,9 @@ University of Murcia (UM)
 Data Tecnica International, LLC (DT)
 
 ## Acknowledgement
+
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois at Urbana-Champaign, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
 
 ## Citations
+
 None quite yet, but we're working on it. ;-)
