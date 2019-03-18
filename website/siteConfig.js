@@ -66,9 +66,9 @@ const siteConfig = {
     // primaryColor: '#2E8555',
     // secondaryColor: '#205C3B',
     primaryColor: '#121020',
-    secondaryColor: '#121020',
-    accentColor: '#785BA3',
-    actionColor: '#008cf2',
+    secondaryColor: '#3956a6',
+    //accentColor: '#785BA3',
+    //actionColor: '#008cf2',
   },
 
   /* Custom fonts for website */
