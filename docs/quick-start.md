@@ -8,12 +8,12 @@ Here are some quick "get started" exmaples, please checkout the additional optio
 > For debugging purposes, include the ```-v``` or ```-vvv``` flags at the end of a command.
 
 ## Install 
-~~~~
+~~~~bash
 pip install genoml
 ~~~~
 
 ## Train the ML model 
-~~~~
+~~~~console
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --model-file=./exampleModel
 ~~~~
 
