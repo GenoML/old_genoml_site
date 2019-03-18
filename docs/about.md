@@ -10,22 +10,22 @@ In order for machine learning software to truly be accessible to non-experts, we
 
 **GenoML** can also be a helpful tool for the advanced user, by providing a simple wrapper function that performs a large number of modeling-related tasks that would typically require many lines of code, and by freeing up their time to focus on other aspects of the data science pipeline tasks such as data-preprocessing, feature engineering and model deployment.
 
-Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates.
+Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates. The current version is stable but under transition. We are moving towards a complete python build that integrates better tools for cloud computing as well as meta/federated learning methods (to keep data sharing safe and secure while working across data silos).
 
 ## Issues, suggestions, and collaboration
 Please report any issue or suggestions to the GenoML issues page at https://github.com/GenoML/genoml/issues
 For other collaboration inquiries, please email mike@datatecnica.com
 
 ## Team
-Faraz Faghri (NIH, UIUC), Sayed Hadi Hashemi (UIUC), Hampton Leonard (NIH), Cornelis Blauwendraat (NIH), Hirotaka Iwaki (NIH, MJFF), Lana Sargeant (VCU), Rafael Jordá Muñoz (Uni of Murcia), Juan A. Botia (Uni of Murcia), Roy H. Campbell (UIUC), Andrew B. Singleton (NIH), Mike A. Nalls (Data Tecnica)
+Faraz Faghri (NIH, UIUC), Sayed Hadi Hashemi (UIUC), Hampton Leonard (NIH / DT), Cornelis Blauwendraat (NIH), Hirotaka Iwaki (NIH / MJFF / DT), Lana Sargeant (VCU), Rafael Jordá Muñoz (UM), Juan A. Botia (UM), Roy H. Campbell (UIUC), Andrew B. Singleton (NIH), Mike A. Nalls (NIH / DT)
 
 ## Affiliations
 Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)
 Laboratory of Neurogenetics, National Institute on Aging (National Institutes of Health)
 The Michael J. Fox Foundation (MJFF)
 School of Nursing, VCU Health, Geriatric Health Clinic, Virginia Commonwealth University (VCU) 
-University of Murcia
-Data Tecnica International
+University of Murcia (UM)
+Data Tecnica International, LLC (DT)
 
 ## Acknowledgement
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), University Illinois at Urbana-Champaign, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
