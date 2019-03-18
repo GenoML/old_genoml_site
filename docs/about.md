@@ -21,10 +21,15 @@ Faraz Faghri (NIH, UIUC), Sayed Hadi Hashemi (UIUC), Hampton Leonard (NIH / DT),
 
 ## Affiliations
 Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)
+
 Laboratory of Neurogenetics, National Institute on Aging (National Institutes of Health)
+
 The Michael J. Fox Foundation (MJFF)
+
 School of Nursing, VCU Health, Geriatric Health Clinic, Virginia Commonwealth University (VCU) 
+
 University of Murcia (UM)
+
 Data Tecnica International, LLC (DT)
 
 ## Acknowledgement
