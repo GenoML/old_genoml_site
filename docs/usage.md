@@ -5,7 +5,7 @@ title: Usage
 ## Input data
 Here is a quick walk through of input file formats and general suggestions. 
 
-**Example data:** You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, available at: https://github.com/ipdgc/GenoML-Brief-Intro/raw/master/exampleData.zip
+**Example data:** You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, available [here](https://github.com/ipdgc/GenoML-Brief-Intro/raw/master/exampleData.zip).
 
 #### Genotypes (required) 
 Generally these should be single nucleotide polymorphisms and samples passing standard GWAS type quality controls.
