@@ -29,7 +29,10 @@ These include:
 [Docker](https://www.docker.com) for containerizing all this so it actually works consistently.
 
 ## Workflow
-![WORKFLOW](https://github.com/GenoML/genoml-core/blob/master/docs/workflowDiagram_Sept19th2018.png)
+<div align="center">
+    <img src="https://github.com/GenoML/genoml-core/blob/master/docs/workflowDiagram_Sept19th2018.png" alt="GenoML Workflow" width="800px" />
+</div>
+
 ### Step 1: Prunes and extracts SNPs, merges input files and preps data for analysis 
 ##### In this phase you build your dataset for machine learning to begin.
 We generally recommend PRSice as the option for pre-filtering variants if you are in a hurry. This method does a great job of incorporating external GWAS data and covariates as well (in case you think the covariates are important in SNP selection). GCTA-sBLUP is also a solid option for SNP filtering incorporating external GWAS data but it cannot at this time incorporate covariates. Both methods allow for the highly recommended variant weighting options (using external GWAS summary statistics to weight variant allele dosages). If you have a large dataset and aren't in a rush, default LD pruning can be extremely useful (at the cost of longer run times since it is the least conservative filtering option in general). If you have no covariates and no external GWAS data, default variant filtering in PLINK via LD pruning is the only option available. Pre-filtering of variants is mandatory as correlated predictors can really bias results for some algorithms and lead to overfitting.  
