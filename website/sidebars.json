@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Intro": ["about","help"],
+    "Intro": ["about","help","roadmap"],
     "Getting Started": ["quick-start","usage"],
     "How it works": ["workflow"],
     "API Reference": ["cli"],
