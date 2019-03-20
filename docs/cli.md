@@ -3,9 +3,9 @@ id: cli
 title: The Command Line Interface (CLI)
 ---
 
-## Detailed command line options for `genoml-train`, `genoml-inference`, and `genoml-cli`. 
+Detailed command line options for `genoml-train`, `genoml-inference`, and `genoml-cli`. 
 
-#### Please note `genoml-cli` is only recommended for debugging and advanced users. We plan to use the `genoml-cli` for internal unit testing and therefore they are in a constant state of flux / improvement. Most useres should stick to ```genoml-train``` and ```genoml-inference```.
+> Please note `genoml-cli` is only recommended for debugging and advanced users. We plan to use the `genoml-cli` for internal unit testing and therefore they are in a constant state of flux / improvement. Most useres should stick to ```genoml-train``` and ```genoml-inference```.
 
 ## genoml-train
 ~~~~
