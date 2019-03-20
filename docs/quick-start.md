@@ -3,7 +3,7 @@ id: quick-start
 title: Quick start
 ---
 
-Here are some quick "get started" exmaples, please checkout the additional options and details in the [usage][] and [CLI][].
+Here are some quick "get started" exmaples, please checkout the additional options and details in the [Usage][] and [CLI][].
 
 ## Install 
 ~~~~
