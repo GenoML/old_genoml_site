@@ -15,22 +15,22 @@ Limiting missingness in these files is helpful even though there is secondary im
 This is the standard .bed, .bim and .fam binaries from [PLINK](https://www.cog-genomics.org/plink/1.9/input#bed).  
 
 #### Phenotypes (required)
-A basic three column white-space delimited file as per PLINK specifications with the column headers FID, IID and PHENO and correspond to samples in the genotype data.  
+A basic three column tab delimited file as per PLINK specifications with the column headers FID, IID and PHENO and correspond to samples in the genotype data.  
 In general, there should be no missing data.  Please code discrete phenotypes as 1/2, with 2 as a case and 1 as a control. Continuos phenotypes should be relatively normally distributed if possible.
 File suffix should be ".pheno".
 
 #### Covariates (optional)
-White-space delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
+Tab delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
 In general we use this for principal components to adjust for population substructure at the variant selection phase.
 File suffix should be ".cov".
 
 #### Additional (optional)
-White-space delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
+Tab delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
 In general we use this for parameters we want to use as predictors that aren't SNPs.  For example, this could include clinical data or thousands of gene expression probes, whatever you want.
 File suffix should be ".addit".  
 
 #### GWAS (optional)
-This is a big white-space delimited text file in the GCTA summary stats format.
+This is a big tab delimited text file in the GCTA summary stats format.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
 ## Train the ML model
