@@ -37,10 +37,10 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('quick-start', this.props.language)}>
+            <a href={this.docUrl('quick-start')}>
               Getting Started 
             </a>
-            <a href={this.docUrl('contribute', this.props.language)}>
+            <a href={this.docUrl('contribute')}>
               Contributing
             </a>
           </div>
@@ -57,7 +57,7 @@ class Footer extends React.Component {
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/genoml/genoml/stargazers"
+              data-count-href="/GenoML/genoml/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
