@@ -29,6 +29,7 @@ Options:
   --cv-reps=<cv_reps>                     Number of cross-validation. An integer greater than 5. Effects the speed [default: 5].
   --impute-data=<impute_data>             Imputation: (knn, median). Governs secondary imputation and data transformation [default: median].
   --grid-search=<grid_search>             Grid search length for parameters, integer greater than 10, 30 or greater recommended, effects speed of initial tune [default: 10].
+  --no-tune                               Disable Tuning. This reduces the accuracy of the trained model but significately increases the training time.
   -v -vv -vvv                             Verbose output.
   -h --help                               Show this screen.
   --version                               Show version.
