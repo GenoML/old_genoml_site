@@ -12,7 +12,7 @@ Detailed command line options for `genoml-train`, `genoml-inference`, and `genom
 genoml-train
 
 Usage:
-  genoml-train (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) (--model-file=model_file) [--addit-file=<addit_file>] [--cov-file=<cov_file>] [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--gwas-file=<gwas_file>] [--herit=<herit>] [--impute-data=<impute_data>] [--n-cores=<n_cores>] [--train-speed=<train_speed>] [-v | -vv | -vvv]
+  genoml-train (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) (--model-file=model_file) [--addit-file=<addit_file>] [--cov-file=<cov_file>] [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--gwas-file=<gwas_file>] [--herit=<herit>] [--impute-data=<impute_data>] [--n-cores=<n_cores>] [--train-speed=<train_speed>] [--no-tune] [-v | -vv | -vvv]
   genoml-train -h | --help
   genoml-train --version
 
