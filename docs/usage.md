@@ -62,6 +62,17 @@ Using `genotype`, `phenotype` , `GWAS`, and `additional` data, as well as `herit
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2 --model-file=./exampleModel 
 ~~~~
 
+### Optional flags 
+The following flags provide more flexibility:
+| Flag           | Description                                                                                                                                                                                                            |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --no-tune      | Disable Tuning. This reduces the accuracy of the trained model but significately increases the training time.                                                                                                          |
+| --n-cores=     | Number of cores to be allocated for computation [default: 1].                                                                                                                                                          |
+| --train-speed= | Training speed: (ALL, FAST, FURIOUS, BOOSTED). Run all models, only,the fastest models, run slightly slower models, or just run boosted models which usually perform best when using genotype data [default: BOOSTED]. |
+| --cv-reps=     | Number of cross-validation. An integer greater than 5. Effects the speed [default: 5].                                                                                                                                 |
+| --impute-data= | Imputation: (knn, median). Governs secondary imputation and data transformation [default: median].                                                                                                                     |
+| --grid-search= | Grid search length for parameters, integer greater than 10, 30 or greater recommended, effects speed of initial tune [default: 10].                                                                                    |
+
 ## Using the trained ML model for inference
 To perform inference or external validation only when `genotype` and `phenotype` data present, run:
 ~~~~
