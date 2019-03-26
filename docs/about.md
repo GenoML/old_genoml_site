@@ -42,7 +42,7 @@ Data Tecnica International, LLC (DT)
 
 This work is brought to you by collaborative efforts in open source software supported to some degree by the Laboratory of Neurogenetics at the National Institute on Aging (National Institutes of Health), the Biowulf High Performance Computing Cluster (National Institutes of Health), University Illinois at Urbana-Champaign, the Michael J Fox Foundation, University of Murcia and Data Tecnica Int'l.
 
-## Citations
+#### Citations
 
 If using GenoML for a publication, we ask that you cite the dependencies for the SNP pruning aspects of the pipeline including:
 
