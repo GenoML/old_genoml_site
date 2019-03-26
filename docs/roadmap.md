@@ -13,6 +13,7 @@ This development cycle includes:
 2. Transitioning to a majority python code.
 3. Integrating additional alogirthms from [scikit-learn](https://scikit-learn.org/stable/) and [TensorFlow](https://www.tensorflow.org).
 4. Generally making the pipeline and docs more user friendly.
+5. Additional feature extraction and variant pre-filtering. 
 
 ## Fall /  winter 2019 (GenoMLv3)
 This is when the exciting stuff really should be happening.
