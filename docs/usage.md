@@ -9,13 +9,13 @@ Here is a quick walk through of input file formats and general suggestions.
 
 ### Genotypes (required) 
 Generally these should be single nucleotide polymorphisms and samples passing standard GWAS type quality controls.
-If using imputed data, we suggest generally filtering at an imputation quality > 0.8 and using the hard call genotypes.
-Additionally, rarer variants can be problematic, and we suggest filtering at a minor allele frequency > 1% (or > 5%) if sample size permits.
-Limiting missingness in these files is helpful even though there is secondary imputation as part of genoML.
-This is the standard .bed, .bim and .fam binaries from [PLINK](https://www.cog-genomics.org/plink/1.9/input#bed).  
+If using imputed data, we suggest filtering at an imputation quality > 0.8 and using the hard call genotypes.
+Additionally, rarer variants can be problematic, and we suggest filtering at a minor allele frequency > 1% (or > 5%) if sample size permits. The fewer samples you have, the less you should focus on variants that have lower minor allele frequencies.
+Limiting missingness in these files is helpful even though there is secondary imputation as part of GenoML.
+This input data is the standard .bed, .bim and .fam binaries from [PLINK](https://www.cog-genomics.org/plink/1.9/input#bed).  
 
 ### Phenotypes (required)
-A basic three column tab delimited file as per PLINK specifications with the column headers FID, IID and PHENO and correspond to samples in the genotype data.  
+A basic three column tab delimited file as per PLINK specifications with the column headers FID, IID and PHENO corresponding to samples in the genotype data.  
 In general, there should be no missing data.  Please code discrete phenotypes as 1/2, with 2 as a case and 1 as a control. Continuos phenotypes should be relatively normally distributed if possible.
 File suffix should be ".pheno".
 
@@ -30,7 +30,7 @@ In general we use this for parameters we want to use as predictors that aren't S
 File suffix should be ".addit".  
 
 ### GWAS (optional)
-This is a big tab delimited text file in the GCTA summary stats format.
+This is a big tab delimited text file of genome-wide association study summary stats.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
 ## Train the ML model
@@ -42,7 +42,7 @@ Requires `genotype` and `phenotype` data, run:
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --model-file=./exampleModel
 ~~~~
 
-### With external GWAS summary stat
+### With external GWAS summary stats
 Using `genotype`, `phenotype` , and `GWAS` data, run:
 ~~~~
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --model-file=./exampleModel
@@ -58,7 +58,7 @@ genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/tra
 The following flags provide more flexibility:
 | Flag           | Description                                                                                                                                                                                                            |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| --no-tune      | Disable Tuning. This reduces the accuracy of the trained model but significately increases the training time.                                                                                                          |
+| --no-tune      | Disable Tuning. This marginally reduces the accuracy of the trained model but significately increases the training time.                                                                                                          |
 | --n-cores=     | Number of cores to be allocated for computation [default: 1].                                                                                                                                                          |
 | --train-speed= | Training speed: (ALL, FAST, FURIOUS, BOOSTED). Run all models, only,the fastest models, run slightly slower models, or just run boosted models which usually perform best when using genotype data [default: BOOSTED]. |
 | --cv-reps=     | Number of cross-validation. An integer greater than 5. Effects the speed [default: 5].                                                                                                                                 |
