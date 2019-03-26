@@ -24,7 +24,6 @@ GenoML synthesizes the amazing work of alot of other scientists to facilitate yo
 These include:  
 [R](https://www.r-project.org), [CARET](http://topepo.github.io/caret/index.html) and the [tidyverse](https://www.tidyverse.org) as well as [Python](https://www.python.org), [PANDAS](https://pandas.pydata.org) and [SciKit-learn](https://scikit-learn.org/stable/) to handle the general stats, data management, plotting and ML modeling.  
 [PLINK](https://www.cog-genomics.org/plink2) for genotype management.  
-[GCTA-sBLUP](https://cnsgenomics.com/software/gcta/#Overview) for variant pre-filtering.  
 [PRSiceV2](https://choishingwan.github.io/PRSice/) for additional variant pre-filtering.  
 [Docker](https://www.docker.com) for containerizing all this so it actually works consistently.
 
@@ -35,12 +34,12 @@ These include:
 
 ### Step 1: Prunes and extracts SNPs, merges input files and preps data for analysis 
 ##### In this phase you build your dataset for machine learning to begin.
-We generally recommend PRSice as the option for pre-filtering variants if you are in a hurry. This method does a great job of incorporating external GWAS data and covariates as well (in case you think the covariates are important in SNP selection). GCTA-sBLUP is also a solid option for SNP filtering incorporating external GWAS data but it cannot at this time incorporate covariates. Both methods allow for the highly recommended variant weighting options (using external GWAS summary statistics to weight variant allele dosages). If you have a large dataset and aren't in a rush, default LD pruning can be extremely useful (at the cost of longer run times since it is the least conservative filtering option in general). If you have no covariates and no external GWAS data, default variant filtering in PLINK via LD pruning is the only option available. Pre-filtering of variants is mandatory as correlated predictors can really bias results for some algorithms and lead to overfitting.  
+We generally recommend PRSice as the option for pre-filtering variants if you are in a hurry. This method does a great job of incorporating external GWAS data and covariates as well (in case you think the covariates are important in SNP selection). This method allows for the highly recommended variant weighting options (using external GWAS summary statistics to weight variant allele dosages). If you have a large dataset and aren't in a rush, default LD pruning can be extremely useful (at the cost of longer run times since it is the least conservative filtering option in general). If you have no covariates and no external GWAS data, default variant filtering in PLINK via LD pruning is the only option available. Pre-filtering of variants is mandatory as correlated predictors can really bias results for some algorithms and lead to overfitting.  
 
 At this phase, polygenic risk scores are also calculated using linear models and summary stats for these are exported (files with the suffix ".PRS_summary.txt") if you chose the PRSice filtering option.  These summary stats are either for continuous traits as a summary(lm()) in R or the AUC calculated using predicted probabilities, probabilities dummied at 0.50 for the prediction and probabilities dummied at the top left threshold from the initial ROC curve. A file with the suffix "confMatAtBestThresh_PRS.txt" is also exported, which is a confusion matrix for the PRS predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve. 
 
 The primary output of this phase of analysis is the file with the suffix ".dataForML". This is a file that will include data for all selected variants, the phenotype of interest, covariates and additional predictors. If the variant scaling option was used, variant allele dosages in this file will be scaled based on external GWAS data.
-Logs and intermediate files for all instances of PLINK, PRSice and GCTA-sBLUP can also be found at this stage.
+Logs and intermediate files for all instances of PLINK and PRSice can also be found at this stage.
 
 ### Step 2: Train model and initial tune via grid search 
 ##### Now that your dataset is built, train a bunch of different models and pick the best performing.
@@ -74,12 +73,6 @@ Rscript $pathToGenoML/otherPackages/PRSice.R --binary-target T --prsice $pathToG
 or for continuous outcomes  
 ~~~~
 Rscript $pathToGenoML/otherPackages/PRSice.R --prsice $pathToGenoML/otherPackages/PRSice_linux -n $cores --out $prefix.temp --pheno-file $pheno.pheno --cov-file $cov.cov -t $geno -b $gwas --print-snp --score std --perm 10000 --bar-levels 5E-8,4E-8,3E-8,2E-8,1E-8,9E-7,8E-7,7E-7,6E-7,5E-7,4E-7,3E-7,2E-7,1E-7,9E-6,8E-6,7E-6,6E-6,5E-6,4E-6,3E-6,2E-6,1E-6,9E-5,8E-5,7E-5,6E-5,5E-5,4E-5,3E-5,2E-5,1E-5,9E-4,8E-4,7E-4,6E-4,5E-4,4E-4,3E-4,2E-4,1E-4,9E-3,8E-3,7E-3,6E-3,5E-3,4E-3,3E-3,2E-3,1E-3,9E-2,8E-2,7E-2,6E-2,5E-2 --no-full --fastscore --binary-target F --beta --snp SNP --A1 A1 --A2 A2 --stat b --se se --pvalue p  
-~~~~
-#### GCTA-sBLUP command
-~~~~
-nsnps=`wc -l < $geno.bim | awk '{print $1}'`
-sbluplambda=$(echo "scale = 10; $nsnps*((1/$herit)-1)" | bc)
-$pathToGenoML/otherPackages/gcta64 --bfile $geno.forSblup --cojo-file $gwas --cojo-sblup $sbluplambda --cojo-wind 10000 --thread-num $cores --out $prefix.temp
 ~~~~
 #### Plink LD pruning command
 ~~~~
