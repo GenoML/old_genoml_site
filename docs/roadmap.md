@@ -11,7 +11,7 @@ We consider GenoML v1 a beta, it's the aggregation of code we have been using in
 This development cycle includes:
 1. Upping speed and efficiency of the pipeline.
 2. Transitioning to a majority python code.
-3. Integrating additional alogirthms from (scikit-learn)[https://scikit-learn.org/stable/] and (TensorFlow)[https://www.tensorflow.org].
+3. Integrating additional alogirthms from [scikit-learn](https://scikit-learn.org/stable/) and [TensorFlow](https://www.tensorflow.org).
 4. Generally making the pipeline and docs more user friendly.
 
 ## Fall /  winter 2019 (GenoMLv3)
@@ -21,7 +21,10 @@ Everybody contributing to GenoML is really excited about the potential applicati
 
 Particularly in light of recent privacy legislation changes, it would be great to be able to learn across multiple data silos.
 
-GenoMLv3 will include federated learning similar to what is outlined (here)[https://arxiv.org/pdf/1902.01046.pdf]. 
+GenoMLv3 will include federated learning similar to what is outlined [here](https://arxiv.org/pdf/1902.01046.pdf). 
 
 Its alot of work, but we think it will be worth it.
 
+> Update 03/20/19
+
+GenoMLv1 testing is ongoing, wider distribution pending April 3rd 2019.
