@@ -5,7 +5,7 @@ title: Roadmap
 
 > Update 03/26/19
 
-We consider GenoML v1 a beta, its the aggregation of code we have been using internally for quite some time generated as part of a variety of different projects and applications. Moving towards a more refined GenoML v2 and v3, we've set some goals below. 
+We consider GenoML v1 a beta, it's the aggregation of code we have been using internally for quite some time, that was generated as part of a variety of different projects and applications. Moving towards a more refined GenoML v2 and v3, we've set some goals below and a loose timeline. 
 
 ## Spring / summer 2019 (GenoMLv2)
 This development cycle includes:
@@ -16,7 +16,12 @@ This development cycle includes:
 
 ## Fall /  winter 2019 (GenoMLv3)
 This is when the exciting stuff really should be happening.
-Everybody contributing to GenoML is really excited about the potential applications of federated learning and meta-learning methods in genomics. 
+
+Everybody contributing to GenoML is really excited about the potential applications of federated learning and meta-learning methods in genomics.
+
 Particularly in light of recent privacy legislation changes, it would be great to be able to learn across multiple data silos.
-GenoMLv3 will include federated learning similar to what is outlined (here)[https://arxiv.org/pdf/1902.01046.pdf]. Its alot of work, but we think it will be worth it.
+
+GenoMLv3 will include federated learning similar to what is outlined (here)[https://arxiv.org/pdf/1902.01046.pdf]. 
+
+Its alot of work, but we think it will be worth it.
 
