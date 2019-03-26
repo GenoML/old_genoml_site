@@ -4,6 +4,7 @@ title: Quick start
 ---
 
 Here are some quick "get started" exmaples, please checkout the additional options and details in the [Usage][] and [CLI][].
+In general, use linux or mac with python > 3.5 for best results.
 
 ## Install 
 ~~~~
