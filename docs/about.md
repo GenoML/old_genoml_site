@@ -44,4 +44,13 @@ This work is brought to you by collaborative efforts in open source software sup
 
 ## Citations
 
-None quite yet, but we're working on it. ;-)
+If using GenoML for a publication, we ask that you cite the dependencies for the SNP pruning aspects of the pipeline including:
+
+Purcell, Shaun, et al. “PLINK: A Tool Set for Whole-Genome Association and Population-Based Linkage Analyses.” American Journal of Human Genetics, vol. 81, no. 3, Sept. 2007, pp. 559–75.
+
+Chang, Christopher C., et al. “Second-Generation PLINK: Rising to the Challenge of Larger and Richer Datasets.” GigaScience, vol. 4, Feb. 2015, p. 7.
+
+Euesden, Jack, et al. “PRSice: Polygenic Risk Score Software.” Bioinformatics , vol. 31, no. 9, May 2015, pp. 1466–68.
+
+Robinson, Matthew R., et al. “Genetic Evidence of Assortative Mating in Humans.” Nature Human Behaviour, vol. 1, no. 1, Nature Publishing Group, Jan. 2017, p. 0016.
+
