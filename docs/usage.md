@@ -54,14 +54,6 @@ Using `genotype`, `phenotype` , `GWAS`, `covariate`, and `additional` data, run:
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --gwas-file=./exampleData/example_GWAS.txt --cov-file=./exampleData/training.cov --addit-file=./exampleData/training.addit --model-file=./exampleModel 
 ~~~~
 
-### With heritability estimate
-> Note: heritability estimate increases the runtime significaintly and is not recommended (will be deprecated in future versions).
-
-Using `genotype`, `phenotype` , `GWAS`, and `additional` data, as well as `heritability estimate`, run:
-~~~~
-genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2 --model-file=./exampleModel 
-~~~~
-
 ### Optional flags 
 The following flags provide more flexibility:
 | Flag           | Description                                                                                                                                                                                                            |
