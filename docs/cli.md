@@ -22,7 +22,6 @@ Options:
   --model-file=model_file                 Path to the model file to save.
   --gwas-file=<gwas_file>                 Path to the GWAS file, if available.
   --cov-file=<cov_file>                   Path to the covariance file, if available.
-  --herit=<herit>                         Heritability estimate of phenotype between 0 and 1, if available.
   --addit-file=<addit_file>               Path to the additional file, if avialable.
   --n-cores=<n_cores>                     Number of cores to be allocated for computation [default: 1].
   --train-speed=<train_speed>             Training speed: (ALL, FAST, FURIOUS, BOOSTED). Run all models, only  the fastest models, run slightly slower models, or just run boosted models which usually perform best when using genotype data [default: BOOSTED].
@@ -68,7 +67,7 @@ Examples:
 genoml-cli
 
 Usage:
-  genoml-cli data-prune  (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) [--gwas-file=<gwas_file>] [--cov-file=<cov_file>] [--herit=<herit>] [--addit-file=<addit_file>] [--temp-dir=<directory>] [--prune-prefix=<prune_prefix>]
+  genoml-cli data-prune  (--geno-prefix=geno_prefix) (--pheno-file=<pheno_file>) [--gwas-file=<gwas_file>] [--cov-file=<cov_file>] [--addit-file=<addit_file>] [--temp-dir=<directory>] [--prune-prefix=<prune_prefix>]
   genoml-cli model-train (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) [--n-cores=<n_cores>] [--train-speed=<train_speed>] [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--impute-data=<impute_data>]
   genoml-cli model-tune (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) [--cv-reps=<cv_reps>] [--grid-search=<grid_search>] [--impute-data=<impute_data>] [--best-model-name=<best_model_name>]
   genoml-cli model-validate (--prune-prefix=prune_prefix) (--pheno-file=<pheno_file>) (--geno-prefix=geno_prefix) (--valid-geno-prefix=valid_geno_prefix) (--valid-pheno-file=<valid_pheno_file>) [--valid-cov-file=<valid_cov_file>] [--gwas-file=<gwas_file>] [--valid-addit-file=<valid_addit_file>] [--n-cores=<n_cores>] [--impute-data=<impute_data>]  [--best-model-name=<best_model_name>]
@@ -80,7 +79,6 @@ Options:
   --pheno-file=<pheno_file>               Path to the phenotype file in PLINK format, *.pheno.
   --gwas-file=<gwas_file>                 Path to the GWAS file, if available.
   --cov-file=<cov_file>                   Path to the covariance file, if available.
-  --herit=<herit>                         Heritability estimate of phenotype between 0 and 1, if available.
   --addit-file=<addit_file>               Path to the additional file, if avialable.
   --temp-dir=<directory>                  Directory for temporary files [default: ./tmp/].
   --n-cores=<n_cores>                     Number of cores to be allocated for computation [default: 1].
@@ -101,8 +99,6 @@ Examples:
   genoml-cli data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno
   genoml-cli data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt
   genoml-cli data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit
-  genoml-cli data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.2
-  genoml-cli data-prune --geno-prefix=./exampleData/example --pheno-file=./exampleData/training.pheno --cov-file=./exampleData/training.cov --gwas-file=./exampleData/example_GWAS.txt --addit-file=./exampleData/training.addit --herit=0.5
   genoml-cli model-train --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
   genoml-cli model-tune --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno
   genoml-cli model-validate --prune-prefix=./tmp/20181225-230052 --pheno-file=./exampleData/training.pheno --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
