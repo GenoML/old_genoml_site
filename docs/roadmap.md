@@ -3,12 +3,20 @@ id: roadmap
 title: Roadmap  
 ---
 
-> Update 03/20/19
+> Update 03/26/19
 
-These are some of the problems and features we have planned for GenoML v2.
+We consider GenoML v1 a beta, its the aggregation of code we have been using internally for quite some time generated as part of a variety of different projects and applications. Moving towards a more refined GenoML v2 and v3, we've set some goals below. 
 
-## Problems
-- Moving everything to Python 
+## Spring / summer 2019 (GenoMLv2)
+This development cycle includes:
+1. Upping speed and efficiency of the pipeline.
+2. Transitioning to a majority python code.
+3. Integrating additional alogirthms from (scikit-learn)[https://scikit-learn.org/stable/] and (TensorFlow)[https://www.tensorflow.org].
+4. Generally making the pipeline and docs more user friendly.
 
-## Features 
-- Adding Pre-trained models
+## Fall /  winter 2019 (GenoMLv3)
+This is when the exciting stuff really should be happening.
+Everybody contributing to GenoML is really excited about the potential applications of federated learning and meta-learning methods in genomics. 
+Particularly in light of recent privacy legislation changes, it would be great to be able to learn across multiple data silos.
+GenoMLv3 will include federated learning similar to what is outlined (here)[https://arxiv.org/pdf/1902.01046.pdf]. Its alot of work, but we think it will be worth it.
+
