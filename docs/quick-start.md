@@ -15,7 +15,7 @@ pip install genoml
 genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --model-file=./exampleModel
 ~~~~
 
-You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, avaiable at [IPDGC example data][].
+You can use the IPDGC (International Parkinson's Disease Genomics Consortium) test data. This data is a simulation of the genetic and clinical data used for Parkinson's diagnosis in previous publications. You can find it here --> [IPDGC example data][].
 
 Final tuned model and performance metrics are stored in the ```--model-file``` as a zip file. 
 
