@@ -28,5 +28,5 @@ Its alot of work, but we think it will be worth it.
 
 > Update 03/20/19
 
-GenoMLv1 testing is ongoing, wider distribution pending April 3rd 2019.
+GenoMLv1 testing is ongoing, wider distribution pending April 8th 2019.
 Do not use versions < 1.0.3.
