@@ -16,7 +16,7 @@ This input data is the standard .bed, .bim and .fam binaries from [PLINK](https:
 
 ### Phenotypes (required)
 A basic three column tab delimited file as per PLINK specifications with the column headers FID, IID and PHENO corresponding to samples in the genotype data.  
-In general, there should be no missing data.  Please code discrete phenotypes as 1/2, with 2 as a case and 1 as a control. Continuos phenotypes should be relatively normally distributed if possible.
+In general, there should be no missing data.  Please code discrete phenotypes as 1/2, with 2 as a case and 1 as a control. Continuous phenotypes should be relatively normally distributed if possible.
 File suffix should be ".pheno".
 
 ### Covariates (optional)
