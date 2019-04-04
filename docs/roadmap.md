@@ -15,14 +15,16 @@ This development cycle includes:
 4. Generally making the pipeline and docs more user friendly.
 5. Additional feature extraction and variant pre-filtering methods. 
 
-## Fall /  winter 2019 (GenoMLv3)
+## Summer / fall 2019 (GenoMLv3)
 This is when the exciting stuff really starts happening.
 
-Everybody contributing to GenoML is really excited about the potential applications of federated learning and meta-learning methods in genomics.
+Everybody contributing to GenoML is really excited about the potential applications of **federated-learning (fed-ML)** and **meta-learning (meta-ML)** methods in genomics.
 
 Particularly in light of recent privacy legislation changes, it would be great to be able to learn across multiple data silos.
+We will use meta-ML to do algorithm competition and selection across data silos.
+We will use fed-ML for centralized training/tuning based on aggregate summary statistics from private data silos.
 
-GenoMLv3 will include federated learning similar to what is outlined [here](https://arxiv.org/pdf/1902.01046.pdf). 
+GenoMLv3 will include fed-ML similar to what is outlined [here](https://arxiv.org/pdf/1902.01046.pdf). 
 
 Its alot of work, but we think it will be worth it.
 
