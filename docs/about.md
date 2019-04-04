@@ -10,7 +10,7 @@ In order for machine learning software to truly be accessible to non-experts, we
 
 **GenoML** can also be a helpful tool for the advanced user, by providing a simple wrapper function that performs a large number of modeling-related tasks that would typically require many lines of code, and by freeing up their time to focus on other aspects of the data science pipeline tasks such as data-preprocessing, feature engineering and model deployment.
 
-Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates. The current version is stable but under transition. We are moving towards a complete python build that integrates better tools for cloud computing as well as meta/federated learning methods (to keep data sharing safe and secure while working across data silos).
+Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates. The current version is stable but under transition. We are moving towards a complete python build that integrates better tools for cloud computing as well as meta/federated learning methods (to keep data sharing safe and secure while working across data silos). We plan to implement **meta-ML** methods for algorithm selection across data silos as well as **federated-ML** for centralized tuning of predictive models using summary statistics from data silos. We believe that these remote learning methods across data silos will be important in future studies and in the context of the changing global data privacy landscape.
 
 ## Issues, suggestions, and collaboration
 
