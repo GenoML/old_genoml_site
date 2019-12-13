@@ -19,7 +19,7 @@ Please report any issue or suggestions to the GenoML issues page at https://gith
 For other collaboration inquiries, please email mike@datatecnica.com. We are really happy to collaborate with pretty much anyone. If you are interested in this project, it would be great to hear from you.
 
 ## Team  
-### Core  
+#### Core  
 Mary Makarious (NIA-NIH)  
 Hampton Leonard (NIA-NIH / DTI)  
 Sayed Hadi Hashemi (UIUC)  
@@ -31,11 +31,11 @@ Andrew B. Singleton (NIA-NIH)
 Juan A. Botia (UM)  
 Faraz Faghri (NIA-NIH, UIUC)  
 Mike A. Nalls (NIA-NIH / DTI)  
-### Collaborators
+#### Collaborators
 Lana Sargeant (VCU)  
 Susan Chacko (Biowulf-NIH)  
 Rafael Jordá Muñoz (UM)  
-### Affiliations  
+#### Affiliations  
 Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)  
 Laboratory of Neurogenetics, National Institute on Aging, National Institutes of Health (NIA-NIH)  
 The Michael J. Fox Foundation (MJFF)  
