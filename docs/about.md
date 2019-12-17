@@ -23,26 +23,28 @@ For other collaboration inquiries, please email mike@datatecnica.com. We are rea
 Mary Makarious (NIA-NIH)  
 Hampton Leonard (NIA-NIH / DTI)  
 Sayed Hadi Hashemi (UIUC)  
+David Saffo (NU)  
 Eduardo Salmerón Castaño (UM)
 Cornelis Blauwendraat (NIA-NIH)  
 Hirotaka Iwaki (NIA-NIH / MJFF / DTI)  
 Roy H. Campbell (UIUC)  
 Andrew B. Singleton (NIA-NIH)   
 Juan A. Botia (UM)  
-Faraz Faghri (NIA-NIH, UIUC)  
+Faraz Faghri (NIA-NIH / UIUC / DTI)  
 Mike A. Nalls (NIA-NIH / DTI)  
 #### Collaborators
 Lana Sargeant (VCU)  
 Susan Chacko (Biowulf-NIH)  
 Rafael Jordá Muñoz (UM)  
 #### Affiliations  
-Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)  
 Laboratory of Neurogenetics, National Institute on Aging, National Institutes of Health (NIA-NIH)  
+Data Tecnica International, LLC (DTI)  
+Department of Computer Science, University of Illinois at Urbana-Champaign (UIUC)  
+College of Computer Sciences, Northeastern University (NU)  
 The Michael J. Fox Foundation (MJFF)  
 Biowulf High Performance Computing Cluster, National Institutes of Health (Biowulf-NIH)  
 School of Nursing, VCU Health, Geriatric Health Clinic, Virginia Commonwealth University (VCU)  
 University of Murcia (UM)  
-Data Tecnica International, LLC (DTI)  
 
 ## Acknowledgement
 
