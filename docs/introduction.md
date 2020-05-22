@@ -12,11 +12,9 @@ In order for machine learning software to truly be accessible to non-experts, we
 
 Please note **GenoML is still under active development** and we encourage you to check back on this repository regularly for updates. The current version is stable but under transition. We are moving towards a complete python build that integrates better tools for cloud computing as well as meta/federated learning methods (to keep data sharing safe and secure while working across data silos). We plan to implement **meta-learning (meta-ML)** methods for algorithm selection across data silos as well as **federatedlearning (fed-ML)** for centralized tuning of predictive models using summary statistics from data silos. We believe that these remote learning methods across data silos will be important in future studies and in the context of the changing global data privacy landscape.
 
-## Issues, suggestions, and collaboration
-
+## Issues, suggestions, need help?
 Please report any issue or suggestions to the GenoML issues page at https://github.com/GenoML/genoml/issues.
-
-For other collaboration inquiries, please email mike@datatecnica.com. We are really happy to collaborate with pretty much anyone. If you are interested in this project, it would be great to hear from you.
+If you want to try and troubleshoot your issue by yourself, please try running your command with the ```-v``` or ```-vvv``` options at the end to generate verbose outputs.
 
 ## Team  
 #### Core  
