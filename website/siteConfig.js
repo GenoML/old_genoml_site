@@ -48,7 +48,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'introduction', label: 'About'},
     {doc: 'quick-start', label: 'Getting Started'},
-    {doc: 'help', label: 'Help'},
+    {doc: 'contribute', label: 'Contribute'},
     {href: 'https://github.com/GenoML', label: 'GitHub' },
     // {blog: true, label: 'Blog'},
   ],
