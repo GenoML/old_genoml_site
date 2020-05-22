@@ -1,6 +1,6 @@
 ---
 id: contribute
-title: Developing GenoML
+title: Contributing
 ---
 
 This project started as some friends / collaborators making something to make their own projects more efficient.
