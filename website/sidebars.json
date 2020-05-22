@@ -1,9 +1,8 @@
 {
   "docs": {
-    "Intro": ["about","help","roadmap"],
+    "GenoML": ["introduction","principles","roadmap","contribute"],
     "Getting Started": ["quick-start","usage"],
     "How it works": ["workflow"],
-    "API Reference": ["cli"],
-    "Contributing ": ["contribute",["roadmap"]]
+    "API Reference": ["cli"]
   }
 }
