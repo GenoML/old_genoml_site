@@ -46,7 +46,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'about', label: 'About'},
+    {doc: 'introduction', label: 'About'},
     {doc: 'quick-start', label: 'Getting Started'},
     {doc: 'help', label: 'Help'},
     {href: 'https://github.com/GenoML', label: 'GitHub' },
