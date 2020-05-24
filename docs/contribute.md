@@ -18,7 +18,7 @@ Go through the quick start and tutorials guides. Does everything work? If not, w
 If you find an issue you would like to fix, open a pull request.  
 Help us making the docs better. File an issue if you find anything that is confusing or can be improved.
 Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
-Got a great idea for a feature or workflow you want to add to GenoML, the forum [insert forum link] or twitter [link GenoML twitter] are great palces to start.
+Got a great idea for a feature or workflow you want to add to GenoML, the forum [insert forum link] or [our twitter](https://twitter.com/geno_ml) are great palces to start.
 
 ### Code of conduct
 
