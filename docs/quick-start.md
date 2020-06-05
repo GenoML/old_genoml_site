@@ -6,7 +6,7 @@ title: Quick start
 # GenoML 
 
 <p align="center">
-  <img width="300" height="300" src="logo.png">
+  <img width="300" height="300" src="GenoML2_white-04.png">
 </p>
 
 # How to Get Started with GenoML
@@ -21,10 +21,11 @@ This README is a brief look into how to structure arguments and what arguments a
 
 `Coming Soon!`
 
-- To install the `examples/` directory (~315 KB), you can use SVN (pre-installed on Macs)
+- To install the `examples/` directory (~315 KB), you can use SVN (pre-installed on Macs) 
 
 `svn checkout https://github.com/GenoML/genoml.git/branches/python_v1.5/examples`
 
+... or download the data from [here](https://github.com/GenoML/genoml/tree/python_v1.5/examples).  
 
 ### Table of Contents 
 #### [0. (OPTIONAL) How to Set Up a Virtual Environment via Conda](#0)
@@ -74,7 +75,7 @@ pip install .
 ## 1. Munging with GenoML
 
 Munging with GenoML will, at minimum, do the following: 
-- Prune your genotypes using PLINK v1.9 (if `--geno` flag is used)
+- Prune your genotypes using PLINK v1.9 (if `--geno` flag is used). You don't have to include genotypes, we just generally do. At its core, GenoML is a fully functional auto-ML. After all, GenoML = **Geno**mics + **M**achine **L**earning.
 - Impute per column using median or mean (can be changed with the `--impute` flag)
 - Z-scaling of features and removing columns with a std dev = 0 
 
@@ -83,7 +84,7 @@ Munging with GenoML will, at minimum, do the following:
 - `method`: Do you want to use `supervised` or `unsupervised` machine learning? *(unsupervised currently under development)*
 - `mode`:  would you like to `munge`, `train`, `tune`, or `test` your model?
 - `--prefix` : Where would you like your outputs to be saved?
-- `--pheno` : Where is your phenotype file? This file only has 2 columns, ID in one, and PHENO in the other (0 for controls and 1 for cases)
+- `--pheno` : Where is your phenotype file? This file only has 2 columns, ID in one, and PHENO in the other (0 for controls and 1 for cases if you are using a **discrete** outcome to indicate disease status for example ... if you are just using a **continuous** outcome, just make sure it is numeric although we generally z scale all continuous data to a mean of zero and a standard deviation of one).
 
 
 Be sure to have your files formatted the same as the examples, key points being: 
@@ -92,7 +93,7 @@ Be sure to have your files formatted the same as the examples, key points being:
 - Your sample IDs matching across all files
 - Your sample IDs not consisting with only integers (add a prefix or suffix to all sample IDs ensuring they are alphanumeric if this is the case prior to running GenoML)  
 
-> *Note:* The following examples are for discrete data, but if you substitute following commands with `continuous` instead of discrete, you can preprocess your continuous data!
+> *Note:* The following examples are for discrete data, but if you substitute following commands with `continuous` instead of discrete, you can preprocess your continuous data! Also note that GenoML only likes numbers! Outside of the ID columns, GenoML hates strings! If you have a categorical variable you want to include as a feature, please use one-hot encoding to make each category its own discrete feature.  
 
 If you would like to munge just with genotypes (in PLINK binary format), the simplest command is the following: 
 ```shell
@@ -129,6 +130,7 @@ genoml discrete supervised munge \
 
 - The `--vif` flag specifies the VIF threshold you would like to use (5 is recommended) 
 - The number of iterations you'd like to run can be modified with the `--iter` flag (if you have or anticipate many collinear variables, it's a good idea to increase the iterations)
+- The VIF calcs themselves can be resource intensive, just a warning. Feature selection via extraTrees might be a better option and is discussed later on  
 
 Well, what if you had GWAS summary statistics handy, and would like to just use the same SNPs outlined in that file? You can do so by running the following:
 ```shell
@@ -184,12 +186,12 @@ genoml discrete supervised munge \
 --addit examples/discrete/training_addit.csv \
 --feature_selection 50
 ```
-The `--feature_selection` flag uses extraTrees ([classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html) for discrete data; [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html) for continuous data) to output a `*_approx_feature_importance.txt` file with the features most contributing to your model at the top. 
+The `--feature_selection` flag uses extraTrees ([classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html) for discrete data; [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html) for continuous data) to output a `*_approx_feature_importance.txt` file with the features most contributing to your model at the top. **We generally reccommend feature selection!** 
 
 
 <a id="2"></a>
 ## 2. Training with GenoML
-Training with GenoML competes a number of different algorithms and outputs the best algorithm based on a specific metric that can be tweaked using the `--metric_max` flag *(default is AUC)*.
+Training with GenoML competes a number of different algorithms and outputs the best algorithm based on a specific metric that can be tweaked using the `--metric_max` flag *(default is AUC)*. These algorithms are pretty common and were selected based on aggregate [kaggle](https://www.kaggle.com/) performance and a survey of ML researchers in the healthcare space.
 
 **Required** arguments for GenoML are the following: 
 - `data` : Is the data `continuous` or `discrete`?
@@ -355,4 +357,6 @@ Planned experimental features include, but are not limited to:
 - Meta-learning
 - Federated learning
 - Biobank-scale support
+- Cross-silo checks for genetic duplicates
+- Outlier detection
 - ...?
