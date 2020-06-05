@@ -25,7 +25,7 @@ In general we use this for parameters we want to use as predictors that aren't S
 File suffix should be ".addit".  
 
 ### GWAS (optional)
-This is a big tab delimited text file of genome-wide association study summary stats.
+This is a big comma delimited text file of genome-wide association study summary stats.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
 ## Complete options for common workflows
