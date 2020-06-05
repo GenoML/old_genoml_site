@@ -6,7 +6,7 @@ title: Contributing
 This project started as some friends / collaborators making something to make their own projects more efficient.
 We hope this helps others in their work.  
 
-This project is maintained by a dedicated group of people. We always look forward to working with new collaborators, hearing new ideas and getting feedback on what we have done (or what you are planning to do). Please join the discussion at [insert forum link] or hit us up on [twitter](https://twitter.com/geno_ml), would be great to hear from you!
+This project is maintained by a dedicated group of people. We always look forward to working with new collaborators, hearing new ideas and getting feedback on what we have done (or what you are planning to do). Please join the discussion and hit us up on [twitter](https://twitter.com/geno_ml), would be great to hear from you!
 
 ### Get involved
 
@@ -18,7 +18,7 @@ Go through the quick start and tutorials guides. Does everything work? If not, w
 If you find an issue you would like to fix, open a pull request.  
 Help us making the docs better. File an issue if you find anything that is confusing or can be improved.
 Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
-Got a great idea for a feature or workflow you want to add to GenoML, the forum [insert forum link] or [our twitter](https://twitter.com/geno_ml) are great palces to start.
+Got a great idea for a feature or workflow you want to add to GenoML, [our twitter](https://twitter.com/geno_ml) is great palce to start ... or submit an issue on GitHub.
 
 ### Code of conduct
 
