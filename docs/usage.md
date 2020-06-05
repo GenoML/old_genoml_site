@@ -3,55 +3,32 @@ id: usage
 title: Usage
 ---
 ## Input data
-Here is a quick walk through of input file formats and general suggestions. 
+Here is a quick walk through of input file formats and general suggestions. You always need a **phenotype** file and at least **genotype** or **"additional"** feature data. Have to have something to predict the phenotype, right?
 
-> Example data: You can use the IPDGC (International Parkinson's Disease Genomics Consortium) example data, available [here](https://github.com/ipdgc/GenoML-Brief-Intro/raw/master/exampleData.zip).
+### Phenotypes (required)
+A basic two column CSV with **ID** and **PHENO** corresponding to samples in the genotype data.  
+ID must be a string, i.e. composed of letters and possibly some combination of letters and numbers.
+In general, there should be no missing data.  Please code discrete phenotypes as 0/1, with 1 as a case and 0 as a control. Continuous phenotypes should be relatively normally distributed if possible.
+File suffix should be ".pheno".
 
-### Genotypes (required) 
+### Genotypes (optional)
 Generally these should be single nucleotide polymorphisms and samples passing standard GWAS type quality controls.
 If using imputed data, we suggest filtering at an imputation quality > 0.8 and using the hard call genotypes.
 Additionally, rarer variants can be problematic, and we suggest filtering at a minor allele frequency > 1% (or > 5%) if sample size permits. The fewer samples you have, the less you should focus on variants that have lower minor allele frequencies.
 Limiting missingness in these files is helpful even though there is secondary imputation as part of GenoML.
 This input data is the standard .bed, .bim and .fam binaries from [PLINK](https://www.cog-genomics.org/plink/1.9/input#bed).  
-
-### Phenotypes (required)
-A basic three column tab delimited file as per PLINK specifications with the column headers FID, IID and PHENO corresponding to samples in the genotype data.  
-In general, there should be no missing data.  Please code discrete phenotypes as 1/2, with 2 as a case and 1 as a control. Continuous phenotypes should be relatively normally distributed if possible.
-File suffix should be ".pheno".
-
-### Covariates (optional)
-Tab delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
-In general we use this for principal components to adjust for population substructure at the variant selection phase.
-File suffix should be ".cov".
+We are working on teaching GenoML to eat more file types, if you have some favorite formats for genotypes, please get in touch either by posting an issue on GitHub or via [twitter](https://twitter.com/geno_ml).
 
 ### Additional (optional)
-Tab delimited file with the first header columns FID and IID, the following columns can contain any numeric data deemed necessary.  
-In general we use this for parameters we want to use as predictors that aren't SNPs.  For example, this could include clinical data or thousands of gene expression probes, whatever you want.
+Comma delimited file with the first header columns **ID**, the following columns can contain any numeric data deemed necessary.  
+In general we use this for parameters we want to use as predictors that aren't SNPs.  For example, this could include clinical data or thousands of gene expression probes, whatever you want.  Please just make sure the file has headers that are strings (i.e. not just numbers).
 File suffix should be ".addit".  
 
 ### GWAS (optional)
 This is a big tab delimited text file of genome-wide association study summary stats.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
-## Train the ML model
-This step performs data pruning as well as model training and tunning.
-
-### Basic 
-Requires `genotype` and `phenotype` data, run:
-~~~~
-genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --model-file=./exampleModel
-~~~~
-
-### With external GWAS summary stats
-Using `genotype`, `phenotype` , and `GWAS` data, run:
-~~~~
-genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno  --gwas-file=./exampleData/example_GWAS.txt --model-file=./exampleModel
-~~~~
-
-### Adding convariates and additional predictor files
-Using `genotype`, `phenotype` , `GWAS`, `covariate`, and `additional` data, run:
-~~~~
-genoml-train --geno-prefix=./exampleData/training --pheno-file=./exampleData/training.pheno --gwas-file=./exampleData/example_GWAS.txt --cov-file=./exampleData/training.cov --addit-file=./exampleData/training.addit --model-file=./exampleModel 
+## Complete options for common workflows
 ~~~~
 
 ### Optional flags 
@@ -65,10 +42,4 @@ The following flags provide more flexibility:
 | --impute-data= | Imputation: (knn, median). Governs secondary imputation and data transformation [default: median].                                                                                                                     |
 | --grid-search= | Grid search length for parameters, integer greater than 10, 30 or greater recommended, effects speed of initial tune [default: 10].                                                                                    |
 
-## Using the trained ML model for inference
-To perform inference or external validation only when `genotype` and `phenotype` data present, run:
-~~~~
-genoml-inference --model-file=./exampleModel --valid-geno-prefix=./exampleData/validation --valid-pheno-file=./exampleData/validation.pheno
-~~~~
-
-
+## 
