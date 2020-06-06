@@ -31,4 +31,4 @@ This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is
 ## Now its time for analysis
 ... you should refer to the **workflows** section of this website for general concepts and helpful hints.  
 If you want to get into the details of what can be done with GenoML in this release, please refer to the **API reference** for a full list of commands and options.  
-**Remember**, if anything is broken, confusing of you jsut want new features, please hit us up on [twitter](https://twitter.com/geno_ml) or submit a ticket to our GitHub issues.
+**Remember**, if anything is broken, confusing of you just want new features, please hit us up on [twitter](https://twitter.com/geno_ml) or submit a ticket to our GitHub issues.
