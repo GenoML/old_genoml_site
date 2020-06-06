@@ -63,15 +63,4 @@ Purcell, Shaun, et al. “PLINK: A Tool Set for Whole-Genome Association and Pop
 Chang, Christopher C., et al. “Second-Generation PLINK: Rising to the Challenge of Larger and Richer Datasets.” GigaScience, vol. 4, Feb. 2015, p. 7.
 
 #### GenoML stands on the shoulders of giants and would not be possible without these excellent resources from the python community (let's give some credit where its due):
-pandas
-pandas-plink
-h5py
-numpy
-cython
-scikit
-xgboost
-tensorflow
-seaborn
-matplot
-statsmodels
-argparse
+joblib, pyparsing, numpy, kiwisolver, six, cycler, python-dateutil, matplotlib, numexpr, tables, pytz, pandas, pyyaml, toolz, locket, partd, fsspec, dask, packaging, zipp, importlib-metadata, pluggy, wcwidth, more-itertools, py, attrs, pytest, pycparser, cffi, zstandard, xarray, tqdm, wrapt, Deprecated, pandas-plink, urllib3, idna, chardet, requests, threadpoolctl, scipy, scikit-learn, seaborn, patsy, statsmodels, xgboost
