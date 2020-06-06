@@ -3,7 +3,19 @@ id: cli
 title: The Command Line Interface (CLI)
 ---
 
-Detailed command line options relating to published GenoML workflows. 
+## At a glance
+`genoml` lets them know you are running a workflow supported by GenoML and its growing community.  
+
+Then let us know if you would like to work with a continuous or discrete outcome in your \*.pheno file with `genoml continuous` or `genoml discrete`.  
+
+The current iteration of documentation supports the `supervised` learning workflow, the list of workflows incoming is scary!
+After that you can add one of the subcommands including choice of `munge`, `train`, `tune`, or `test`, these are steps within the supervised workflow.  
+
+If you are interested in harmonizing a test dataset for external validation of a previous model, use `genoml harmonize`.
+
+The general structure of GenoML commands is `genoml` then `outcome` type (discrete or continuous for now), then `workflow` (supervised for now), then `subcommand` that is usually a step within a larger workflow.
+
+Detailed command line options relating to published GenoML `workflows` and their `subcommands` below. 
 
 ## genoml - the root of all commands
 ~~~~
