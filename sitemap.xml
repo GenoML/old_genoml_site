@@ -20,5 +20,5 @@
 <url> <loc>https://genoml.github.io/docs/roadmap</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/roadmap" /> </url>
 <url> <loc>https://genoml.github.io/docs/setup</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/setup" /> </url>
 <url> <loc>https://genoml.github.io/docs/usage</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/usage" /> </url>
-<url> <loc>https://genoml.github.io/docs/workflow</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/workflow" /> </url>
+<url> <loc>https://genoml.github.io/docs/workflows</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://genoml.github.io/docs/workflows" /> </url>
 </urlset>
