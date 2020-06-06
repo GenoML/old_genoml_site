@@ -8,6 +8,8 @@ title: Workflows
 
 The pip install is generally the way to go, although you could also download the source or container for cloud applications (a web server is currently under development as well).
 
+While GenoMLs, it always provides a narrative that describes the calculations and outputs of each step of the workflows, so we'll let the software do most of the talking for us. Below are some quick overviews and helpful hints for various workflows in the GenoML ecosystem (an ecosystem that is growing rapidly with the hellp of the genomcis and ML communities). 
+
 ## SUPERVISED LEARNING
 ### Step 1: Merge and munge your data 
 ##### In this phase you build your dataset for machine learning to begin.
@@ -25,42 +27,34 @@ A few key insights include:
 - VIF is useful but not perfect and can be time consuming for datasets with alot of features
 - do not include features with > 15% missing data, we'll impute the missing but "you know the story"
 - only samples overlapping all input data files will be kept
+- only numeric data allowed outside of the **ID** columns, the **ID** column needs to be soem combo of letters adn numbers
+- when using genetics data for a known disease, we tend to run a quick prune of imputed hard calls (> 0.8 imputation quality) and make sure all GWAS hits from disease(s) of interest are included ... then do feature selection and further imputation / pruning within GenoML
+- we run a pretty strict LD prune for SNPs using an adaptation of PLINKv1.9's `--indep-pairwise 1000 50 0.1`
 
 ### Step 2: Train model 
 ##### Now that your dataset is built, train a bunch of different models and pick the best performing.
-Now that you have a ".dataForML" file, start testing algorithms and building models.
 
-We generally recommend either the BOOSTED or ALL options here for the best balance of completeness and performance. Also, we recommend a minimum grid search interval of 30 and at least 10 iterations of cross validation.
+Now that you have a dataset built, why not compete a dozen of the top amchine learning algorithms against each other to see which one works best?  
+This part may trigger some people, we include linear (continuous) and logistic (discrete) regression among our algorithms. These rarely win competitions, but work very well with few factors each with a large effect estimate.  
+At this point, the auto-ML functionality of GenoML kicks in. Your dataset is split 70:30 betweem trained:evaluate. All agorithms are trained on 70% of the data, then evaluated quickly on the same witheld 30% of data.  
+The algorithm that provides the best metrics for performance is then selected and the model itself plus various summarys stats are exported. Please see the narrative provided in log files for further details.
 
-Early on in this phase of analysis, we export files with the suffixes ".nzv" and ".highCor".  If you plan to rerun and/or tweak options, it may be good to exclude these parameters from your data in future analyses if possible as these are either near-zero variance parameters or highly correlated parameters that can lead to overfitting.
-
-Here all algorithms compete to perform best across cross validation.  The model with the highest mean R2 for continuous traits or highest mean AUC for discrete traits across all cross-validation iterations will be selected. You can view the runtimes and performance of each algorithm at this cross-validation and tuning phase in the files with suffixes "methodTimings.tab" and "methodPerformance.tab".  
-
-The best model will also be exported as an Rdata object with the suffix "bestModel.Rdata".  A variable importance matrix showing the relative contribution to predictions of each parameters from the "dataForML" file will be exported with the suffix "varImp.tab". Predictions from the best model in the training set will be exported in the file with the suffix "trainingSetPredicitions.tab", these predictions will be overfit since it is the training dataset ... the same applies to the contents of the file with the suffix "training_summary.txt" which mirrors the "PRS_summary.txt" file from the previous step. Additionally, PNG files containing density, ROC and/or regression plots for your best performing model will be output at this point. A standard confusion matrix (suffix "confMat.txt") with additional summary statistics will also be exported, although at this time, this is based off a simple dummying of predictions at a probability of case status at 0.50 for discrete phenotypes. A file with the suffix "confMatAtBestThresh_training.txt" is also exported, which is a confusion matrix for the training set predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
+Helpful hits for model training include:
+- if your sample sizes in discrete analyses are very far from 1:1 for cases:controls, might be better to use the balanced accuracy option as opposed to the AUC option for metric maximization, see the `--metric_max` option for further details, you can even use sensitivity or specificity if you want.
+- `continuous` workflows only train on r2 values, sorry we are a little lazy with that one
 
 ### Step 3: Secondary tuning via extended grid search and maximization of hyperparameters 
-##### This phase is a simple but sometimes time consuming extended tune of the best model from step 2.
-If you think a longer tune is the way to go, please feel free to run an extended tune on your best model.
-Exported files are similar to step 2 but have the additional "tuned" flag in the suffix.
+##### You've just identified the likely best algorithm for your data, lets rebuild a model with a solid hyperparameter tune at cross validation.
+Quick paramterized grid search to optimize model performance across multiple folds of witheld data. Pretty straight forward. During the run, check the logs as GenoML walks you through this process.
 
 ### Step 4: External validation in test data 
-##### Fit your best / tuned model from steps 2 and / or 3 to an external dataset and see how it really performs.
-This phase is pretty straight forward, test your model in an external dataset. This could be a separate study or a withheld subset of the original dataset, but a separate study is always the best. A file with the suffix "confMatAtBestThresh_validation.txt" is also exported, which is a confusion matrix for the validation predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve.
+##### The gold standard for performance testing.
+For this separate dataset, you are taking the model produced in step 2 or step 3 and applying it.  
+There is a great walk through of this in the **quickstart** section.
 
-The only thing to make sure is that all parameters of interest exist in both datasets (training and validation).  For example, make sure you have the same variants availible in the genotype files as well as the same phenotypes in the phenotpye files across training and validation. If you used any ".addit" or ".cov" files, these should be a mirror of the training phase as well. In addition, these should be on the same numeric scale. Put simply, missing predictors from training will kill the validation.
+Some hints for successfully testing a model in an external validation dataset include:
+- check the logs for performance updates and workflow progress
+- make sure you run munge with all data harmonization options enabled, Dan worked really hard on these so make use of them please
+- continuous features and phenotypes all need to be on the same scale (numerically), so scaling is a good thing
 
-## Additional details
-##### Some of whats going on under the hood of genoML
-#### PRSice command
-~~~~
-Rscript $pathToGenoML/otherPackages/PRSice.R --binary-target T --prsice $pathToGenoML/otherPackages/PRSice_linux -n $cores --out $prefix.temp --pheno-file $pheno.pheno --cov-file $cov.cov -t $geno -b $gwas --print-snp --score std --perm 10000 --bar-levels 5E-8,4E-8,3E-8,2E-8,1E-8,9E-7,8E-7,7E-7,6E-7,5E-7,4E-7,3E-7,2E-7,1E-7,9E-6,8E-6,7E-6,6E-6,5E-6,4E-6,3E-6,2E-6,1E-6,9E-5,8E-5,7E-5,6E-5,5E-5,4E-5,3E-5,2E-5,1E-5,9E-4,8E-4,7E-4,6E-4,5E-4,4E-4,3E-4,2E-4,1E-4,9E-3,8E-3,7E-3,6E-3,5E-3,4E-3,3E-3,2E-3,1E-3,9E-2,8E-2,7E-2,6E-2,5E-2 --no-full --fastscore --beta --snp SNP --A1 A1 --A2 A2 --stat b --se se --pvalue p  
-~~~~
-or for continuous outcomes  
-~~~~
-Rscript $pathToGenoML/otherPackages/PRSice.R --prsice $pathToGenoML/otherPackages/PRSice_linux -n $cores --out $prefix.temp --pheno-file $pheno.pheno --cov-file $cov.cov -t $geno -b $gwas --print-snp --score std --perm 10000 --bar-levels 5E-8,4E-8,3E-8,2E-8,1E-8,9E-7,8E-7,7E-7,6E-7,5E-7,4E-7,3E-7,2E-7,1E-7,9E-6,8E-6,7E-6,6E-6,5E-6,4E-6,3E-6,2E-6,1E-6,9E-5,8E-5,7E-5,6E-5,5E-5,4E-5,3E-5,2E-5,1E-5,9E-4,8E-4,7E-4,6E-4,5E-4,4E-4,3E-4,2E-4,1E-4,9E-3,8E-3,7E-3,6E-3,5E-3,4E-3,3E-3,2E-3,1E-3,9E-2,8E-2,7E-2,6E-2,5E-2 --no-full --fastscore --binary-target F --beta --snp SNP --A1 A1 --A2 A2 --stat b --se se --pvalue p  
-~~~~
-#### Plink LD pruning command
-~~~~
-$pathToGenoML/otherPackages/plink --bfile $geno --indep-pairwise 10000 1 0.1 --out $prefix.temp
-$pathToGenoML/otherPackages/plink --bfile $geno --extract $prefix.temp.prune.in --recode A --out $prefix.reduced_genos
-~~~~
+## MORE WORKFLOWS AND OPTIONS COMING VERY SOON, CHECK THE ROADMAP FOR MORE!
