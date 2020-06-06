@@ -3,7 +3,7 @@ id: usage
 title: Usage
 ---
 ## Input data
-Here is a quick walk through of input file formats and general suggestions. You always need a **phenotype** file and at least **genotype** or **"additional"** feature data. Have to have something to predict the phenotype, right?
+Here is a quick walk through of input file formats and general suggestions. You always need a **phenotype** file and at least **genotype** or **"additional"** feature data. Have to have something to predict the phenotype, right? **GenoML** = **geno**mcis + **m**achine **l**earning, so you get some genomics workflows plus a fully functional auto-ML.
 
 ### Phenotypes (required)
 A basic two column CSV with **ID** and **PHENO** corresponding to samples in the genotype data.  
@@ -28,18 +28,7 @@ File suffix should be ".addit".
 This is a big comma delimited text file of genome-wide association study summary stats.
 This file must have header as follows, *SNP A1 A2 freq b se p N*, where *SNP* is a unique variant ID, *A1* is the effect allele, *A2* is the reference allele, *freq* is the frequency of A1, *b* is the beta coefficient from GWAS, *se* is the standard error from GWAS, *p* is the p-value from GWAS and *N* is the sample size. No missing data is allowed.
 
-## Complete options for common workflows
-~~~~
-
-### Optional flags 
-The following flags provide more flexibility:
-| Flag           | Description                                                                                                                                                                                                            |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| --no-tune      | Disable Tuning. This marginally reduces the accuracy of the trained model but significately increases the training time.                                                                                                          |
-| --n-cores=     | Number of cores to be allocated for computation [default: 1].                                                                                                                                                          |
-| --train-speed= | Training speed: (ALL, FAST, FURIOUS, BOOSTED). Run all models, only,the fastest models, run slightly slower models, or just run boosted models which usually perform best when using genotype data [default: BOOSTED]. |
-| --cv-reps=     | Number of cross-validation. An integer greater than 5. Effects the speed [default: 5].                                                                                                                                 |
-| --impute-data= | Imputation: (knn, median). Governs secondary imputation and data transformation [default: median].                                                                                                                     |
-| --grid-search= | Grid search length for parameters, integer greater than 10, 30 or greater recommended, effects speed of initial tune [default: 10].                                                                                    |
-
-## 
+## Now its time for analysis
+... you should refer to the **workflows** section of this website for general concepts and helpful hints.  
+If you want to get into the details of what can be done with GenoML in this release, please refer to the **API reference** for a full list of commands and options.  
+**Remember**, if anything is broken, confusing of you jsut want new features, please hit us up on [twitter](https://twitter.com/geno_ml) or submit a ticket to our GitHub issues.
