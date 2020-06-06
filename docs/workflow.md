@@ -1,42 +1,32 @@
 ---
-id: workflow
-title: Workflow
+id: workflows
+title: Workflows
 ---
 ## QUICK SUMMARY
 
-**GenoML** is a package that enables users to easily run basic machine learning (ML) pipelines on genetic and genomic data.  The goal of this project is to democratize and simplify these sometimes complex analyses.  GenoML is machine learning made easier (for geneticists). Our development focus is automating the annoying and complicated aspects of most machine learning applications in genetics/genomics, from pre-filtering of SNPs to algorithm selection and validation testing.
+**GenoML** is a package that enables users to easily run basic machine learning (ML) pipelines on genetic and genomic data.  In the future, we are adding alot of content for basic genomcis pipelines as well, please see the **roadmap** or our twitter for more info. The goal of this project is to democratize and simplify these sometimes complex analyses.  GenoML is machine learning made easier (for geneticists in particular). Our development focus is automating the annoying and complicated aspects of most machine learning applications in genetics/genomics, from pre-filtering of SNPs to algorithm selection and validation testing.
 
-We have included a command line binary for local computing but also a container for cloud applications (a web server is currently under development).
+The pip install is generally the way to go, although you could also download the source or container for cloud applications (a web server is currently under development as well).
 
-In its current form, you can use this package to:
-1. Select features of interest from genetic data for predictions
-2. Integrate clinical and genomic (QTL etc) data into these predictions
-3. Train models using multiple predictive algorithms for discrete and continuous traits
-4. Build and test external dataset(s) for validation of predicted models
-
-The next phase of this project will include:
-1. More efficient performance of the basic pipeline
-2. Integration of federated and meta learning methods to facilitate secure predictive modeling without the sharing of underlying participant level data (similar to how phones have learned predictive texting)
-3. A cloud-based web server to store, share and apply predictive models
-
-
-GenoML synthesizes the amazing work of alot of other scientists to facilitate your analyses.  
-These include:  
-[R](https://www.r-project.org), [CARET](http://topepo.github.io/caret/index.html) and the [tidyverse](https://www.tidyverse.org) as well as [Python](https://www.python.org), [PANDAS](https://pandas.pydata.org) and [SciKit-learn](https://scikit-learn.org/stable/) to handle the general stats, data management, plotting and ML modeling.  
-[PLINK](https://www.cog-genomics.org/plink2) for genotype management.  
-[PRSiceV2](https://choishingwan.github.io/PRSice/) for additional variant pre-filtering.  
-[Docker](https://www.docker.com) for containerizing all this so it actually works consistently.
-
-### Step 1: Prunes and extracts SNPs, merges input files and preps data for analysis 
+## SUPERVISED LEARNING
+### Step 1: Merge and munge your data 
 ##### In this phase you build your dataset for machine learning to begin.
-We generally recommend PRSice as the option for pre-filtering variants if you are in a hurry. This method does a great job of incorporating external GWAS data and covariates as well (in case you think the covariates are important in SNP selection). This method allows for the highly recommended variant weighting options (using external GWAS summary statistics to weight variant allele dosages). If you have a large dataset and aren't in a rush, default LD pruning can be extremely useful (at the cost of longer run times since it is the least conservative filtering option in general). If you have no covariates and no external GWAS data, default variant filtering in PLINK via LD pruning is the only option available. Pre-filtering of variants is mandatory as correlated predictors can really bias results for some algorithms and lead to overfitting.  
 
-At this phase, polygenic risk scores are also calculated using linear models and summary stats for these are exported (files with the suffix ".PRS_summary.txt") if you chose the PRSice filtering option.  These summary stats are either for continuous traits as a summary(lm()) in R or the AUC calculated using predicted probabilities, probabilities dummied at 0.50 for the prediction and probabilities dummied at the top left threshold from the initial ROC curve. A file with the suffix "confMatAtBestThresh_PRS.txt" is also exported, which is a confusion matrix for the PRS predictions using the optimized "best" cut-off for delineating cases and controls based on the reciever operator curve. 
+The primary output of this phase of analysis is the file with the suffix ".dataForML.h5". This is a pretty compact h5 archive that will be used inas the basis of all future analysis. You can even edit the files inside if you want, but that is not reccomended (unless you are pretty good with python).
 
-The primary output of this phase of analysis is the file with the suffix ".dataForML". This is a file that will include data for all selected variants, the phenotype of interest, covariates and additional predictors. If the variant scaling option was used, variant allele dosages in this file will be scaled based on external GWAS data.
-Logs and intermediate files for all instances of PLINK and PRSice can also be found at this stage.
+In this phase, we merge and munge all the data so you can build models or use other pipelines we have in development like network community builds or a GWAS.
 
-### Step 2: Train model and initial tune via grid search 
+The basis of this command, what you can think of as the fork in the road regarding functionality is if you use a discrete or continuous outcome. We'll be adding multiclass and unlabeled functionality soon.
+Generally you chose `genoml continuous supervised munge` or `genoml discrete supervised munge`.
+
+A few key insights include:
+- use feature selection options, this prevents overfitting of machine learning models
+- use only high quality common SNPs for machine learning analyses if you plan to use genetic data
+- VIF is useful but not perfect and can be time consuming for datasets with alot of features
+- do not include features with > 15% missing data, we'll impute the missing but "you know the story"
+- only samples overlapping all input data files will be kept
+
+### Step 2: Train model 
 ##### Now that your dataset is built, train a bunch of different models and pick the best performing.
 Now that you have a ".dataForML" file, start testing algorithms and building models.
 
