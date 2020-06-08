@@ -6,31 +6,31 @@ title: Contributing
 This project started as some friends / collaborators making something to make their own projects more efficient.
 We hope this helps others in their work.  
 
-This project is maintained by a dedicated group of people. We always look forward to working with new collaborators, hearing new ideas and getting feedback on what we have done (or what you are planning to do). Please join the discussion and hit us up on [twitter](https://twitter.com/geno_ml), would be great to hear from you!
+This project is maintained by a dedicated group of people. We always look forward to working with new collaborators, hearing new ideas, and getting feedback on what we have done (or what you are planning to do). Please join the discussion and hit us up on [twitter](https://twitter.com/geno_ml), would be great to hear from you!
 
 ### Get involved
 
 You don't even have to write code to contribute to GenoML. A major goal of GenoML is to simplify and democratize complex workflows for people with little to no coding experience.
 
-Here's a few ideas to get you strated contributing and collaborating with us:
+Here's a few ideas to get you started contributing and collaborating with us:
 
-Go through the quick start and tutorials guides. Does everything work? If not, we're always looking for improvements. Let us know by opening an issue.
-If you find an issue you would like to fix, open a pull request.  
-Help us making the docs better. File an issue if you find anything that is confusing or can be improved.
-Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on.
-Got a great idea for a feature or workflow you want to add to GenoML, [our twitter](https://twitter.com/geno_ml) is great palce to start ... or submit an issue on GitHub.
+- Go through the quick start and tutorials guides. Does everything work? If not, we're always looking for improvements. Let us know by opening an issue
+- If you find an issue you would like to fix, open a pull request
+- Help us making the docs better. File an issue if you find anything that is confusing or can be improved
+- Take a look at the features requested by others in the community and consider opening a pull request if you see something you want to work on
+
+Got a great idea for a feature or workflow you want to add to GenoML, [our twitter](https://twitter.com/geno_ml) is great place to start... or submit an issue on GitHub.
 
 ### Code of conduct
 
-GenoML is for everbody. This is a community for positivity in research and open science for public good. Please respect the Contributor Covenant Code of Conduct below, thanks!
+GenoML is for everybody. This is a community for positivity in research and open science for public good. Please respect the Contributor Covenant Code of Conduct below, thanks!
 
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
+community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender
 identity and expression, level of experience, education, socio-economic status,
 nationality, personal appearance, race, religion, or sexual identity
 and orientation.

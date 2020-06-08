@@ -3,7 +3,7 @@ id: cli
 title: The Command Line Interface (CLI)
 ---
 
-## At a glance
+## At a Glance
 `genoml` lets them know you are running a workflow supported by GenoML and its growing community.  
 
 Then let us know if you would like to work with a continuous or discrete outcome in your \*.pheno file with `genoml continuous` or `genoml discrete`.  
