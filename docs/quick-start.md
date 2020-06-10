@@ -6,7 +6,7 @@ title: Quick start
 # GenoML 
 
 <p align="center">
-  <img width="300" height="300" src="GenoML2_white-04.png">
+  <img width="300" height="300" src="https://github.com/GenoML/genoml.github.io/blob/source/docs/GenoML2_white-04.png">
 </p>
 
 # How to Get Started with GenoML
@@ -58,7 +58,7 @@ conda activate GenoML
 # conda env remove -n GenoML
 ```
 
-To install the package at this path:
+To install the GenoML in the user's path in a virtual environment, you can do the following:
 ```shell
 # Install the package at this path
 pip install .
@@ -70,7 +70,6 @@ pip install .
 	# Removing a conda virtualenv
 # conda remove --name GenoML --all 
 ```
-
 <a id="1"></a>
 ## 1. Munging with GenoML
 
