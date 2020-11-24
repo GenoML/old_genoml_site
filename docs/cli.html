@@ -78,30 +78,30 @@ positional arguments:
   command     Subcommand <span class="hljs-keyword">to</span> <span class="hljs-builtin-name">run</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-harmonize"></a><a href="#genoml-harmonize" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml harmonize</h2>
-<pre><code class="hljs">usage: genoml harmonize [-h] <span class="hljs-comment">--test_geno_prefix TEST_GENO_PREFIX</span>
-                        [<span class="hljs-comment">--test_prefix TEST_PREFIX]</span>
-                        [<span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX]</span>
-                        <span class="hljs-comment">--training_snps_alleles TRAINING_SNPS_ALLELES [-v]</span>
+<pre><code class="hljs">usage: genoml harmonize [-h] --test_geno_prefix TEST_GENO_PREFIX
+                        [--test_prefix TEST_PREFIX]
+                        [--ref_model_prefix REF_MODEL_PREFIX]
+                        --training_snps_alleles TRAINING_SNPS_ALLELES [-v]
 
 optional arguments:
-  -h, <span class="hljs-comment">--help            show this help message and exit</span>
-  <span class="hljs-comment">--test_geno_prefix TEST_GENO_PREFIX</span>
-                        Prefix <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> genotypes <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> test dataset <span class="hljs-keyword">in</span> PLINK
-                        binary <span class="hljs-built_in">format</span>.
-  <span class="hljs-comment">--test_prefix TEST_PREFIX</span>
-                        Prefix <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> dataset you would like <span class="hljs-built_in">to</span> test against
-                        your reference model. Remember, <span class="hljs-keyword">the</span> model will <span class="hljs-keyword">not</span>
-                        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">well</span> <span class="hljs-title">if</span> <span class="hljs-title">it</span> <span class="hljs-title">does</span> <span class="hljs-title">not</span> <span class="hljs-title">include</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span></span>
-                        features, <span class="hljs-keyword">and</span> these features should be <span class="hljs-keyword">on</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span>
-                        <span class="hljs-keyword">numeric</span> scale, you can leave off <span class="hljs-keyword">the</span> <span class="hljs-string">'.dataForML.h5'</span>
+  -h, --help            show this help message <span class="hljs-keyword">and</span> exit
+  --test_geno_prefix TEST_GENO_PREFIX
+                       <span class="hljs-built_in"> Prefix </span>of the genotypes <span class="hljs-keyword">for</span> the test dataset <span class="hljs-keyword">in</span> PLINK
+                        binary format.
+  --test_prefix TEST_PREFIX
+                       <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> the dataset you would like <span class="hljs-keyword">to</span> test against
+                        your reference model. Remember, the model will <span class="hljs-keyword">not</span>
+                        function well <span class="hljs-keyword">if</span> it does <span class="hljs-keyword">not</span> include the same
+                        features, <span class="hljs-keyword">and</span> these features should be on the same
+                        numeric scale, you can leave off the <span class="hljs-string">'.dataForML.h5'</span>
                         suffix.
-  <span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX</span>
-                        Prefix <span class="hljs-keyword">of</span> your reference model <span class="hljs-built_in">file</span>, you can leave off
-                        <span class="hljs-keyword">the</span> <span class="hljs-string">'.joblib'</span> suffix.
-  <span class="hljs-comment">--training_snps_alleles TRAINING_SNPS_ALLELES</span>
-                        File <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> SNPs <span class="hljs-keyword">and</span> alleles <span class="hljs-built_in">file</span> generated <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span>
-                        training phase that we will use <span class="hljs-built_in">to</span> compare.
-  -v, <span class="hljs-comment">--verbose         Verbose output.</span>
+  --ref_model_prefix REF_MODEL_PREFIX
+                       <span class="hljs-built_in"> Prefix </span>of your reference model file, you can leave off
+                        the <span class="hljs-string">'.joblib'</span> suffix.
+  --training_snps_alleles TRAINING_SNPS_ALLELES
+                        File <span class="hljs-keyword">to</span> the SNPs <span class="hljs-keyword">and</span> alleles file generated <span class="hljs-keyword">in</span> the
+                        training phase that we will use <span class="hljs-keyword">to</span> compare.
+  -v, --verbose         Verbose output.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-discrete-supervised-munge"></a><a href="#genoml-discrete-supervised-munge" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml discrete supervised munge</h2>
 <pre><code class="hljs">usage: genoml discrete supervised munge [-h] [--prefix PREFIX]
@@ -246,25 +246,25 @@ optional arguments:
   -v, --verbose         Verbose output.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-discrete-supervised-tune"></a><a href="#genoml-discrete-supervised-tune" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml discrete supervised tune</h2>
-<pre><code class="hljs">usage: genoml discrete supervised tune [-h] [<span class="hljs-comment">--prefix PREFIX]</span>
-                                       [<span class="hljs-comment">--metric_tune {AUC,Balanced_Accuracy}]</span>
-                                       [<span class="hljs-comment">--max_tune MAX_TUNE] [--n_cv N_CV]</span>
+<pre><code class="hljs">usage: genoml discrete supervised tune [-h] [--prefix PREFIX]
+                                       [--metric_tune {AUC,Balanced_Accuracy}]
+                                       [--max_tune MAX_TUNE] [--n_cv N_CV]
                                        [-v]
 
 optional arguments:
-  -h, <span class="hljs-comment">--help            show this help message and exit</span>
-  <span class="hljs-comment">--prefix PREFIX       Prefix for your output build.</span>
-  <span class="hljs-comment">--metric_tune {AUC,Balanced_Accuracy}</span>
-                        Using what metric <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> best algorithm <span class="hljs-built_in">do</span> you want <span class="hljs-built_in">to</span>
-                        tune <span class="hljs-keyword">on</span>? [<span class="hljs-title">default</span>: <span class="hljs-title">AUC</span>].
-  <span class="hljs-comment">--max_tune MAX_TUNE   Max number of tuning iterations: (integer likely</span>
-                        greater than <span class="hljs-number">10</span>). This governs <span class="hljs-keyword">the</span> <span class="hljs-built_in">length</span> <span class="hljs-keyword">of</span> tuning
-                        <span class="hljs-built_in">process</span>, run speed <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> maximum <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> possible
-                        combinations <span class="hljs-keyword">of</span> tuning parameters [default: <span class="hljs-number">50</span>].
-  <span class="hljs-comment">--n_cv N_CV           Number of cross validations: (integer likely greater</span>
-                        than <span class="hljs-number">3</span>). Here we <span class="hljs-built_in">set</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> cross-validation
-                        runs <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> algorithms [default: <span class="hljs-number">5</span>].
-  -v, <span class="hljs-comment">--verbose         Verbose output.</span>
+  -h, --help            show this help message <span class="hljs-keyword">and</span> exit
+  --prefix<span class="hljs-built_in"> PREFIX </span>     <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> your output build.
+  --metric_tune {AUC,Balanced_Accuracy}
+                        Using what metric of the best algorithm <span class="hljs-keyword">do</span> you want <span class="hljs-keyword">to</span>
+                        tune on? [default: AUC].
+  --max_tune MAX_TUNE   Max number of tuning iterations: (integer likely
+                        greater than 10). This governs the length of tuning
+                        process, <span class="hljs-builtin-name">run</span> speed <span class="hljs-keyword">and</span> the maximum number of possible
+                        combinations of tuning parameters [default: 50].
+  --n_cv N_CV           Number of cross validations: (integer likely greater
+                        than 3). Here we <span class="hljs-builtin-name">set</span> the number of cross-validation
+                        runs <span class="hljs-keyword">for</span> the algorithms [default: 5].
+  -v, --verbose         Verbose output.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-continuous-supervised-tune"></a><a href="#genoml-continuous-supervised-tune" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml continuous supervised tune</h2>
 <pre><code class="hljs">usage: genoml continuous supervised tune [-h] [--prefix PREFIX]
@@ -284,45 +284,45 @@ optional arguments:
   -v, --verbose        Verbose output.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-discrete-supervised-test"></a><a href="#genoml-discrete-supervised-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml discrete supervised test</h2>
-<pre><code class="hljs">usage: genoml discrete supervised test [-h] [<span class="hljs-comment">--prefix PREFIX]</span>
-                                       [<span class="hljs-comment">--test_prefix TEST_PREFIX]</span>
-                                       [<span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX]</span>
+<pre><code class="hljs">usage: genoml discrete supervised test [-h] [--prefix PREFIX]
+                                       [--test_prefix TEST_PREFIX]
+                                       [--ref_model_prefix REF_MODEL_PREFIX]
                                        [-v]
 
 optional arguments:
-  -h, <span class="hljs-comment">--help            show this help message and exit</span>
-  <span class="hljs-comment">--prefix PREFIX       Prefix for your output build.</span>
-  <span class="hljs-comment">--test_prefix TEST_PREFIX</span>
-                        Prefix <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> dataset you would like <span class="hljs-built_in">to</span> test against
-                        your reference model. Remember, <span class="hljs-keyword">the</span> model will <span class="hljs-keyword">not</span>
-                        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">well</span> <span class="hljs-title">if</span> <span class="hljs-title">it</span> <span class="hljs-title">does</span> <span class="hljs-title">not</span> <span class="hljs-title">include</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span></span>
-                        features, <span class="hljs-keyword">and</span> these features should be <span class="hljs-keyword">on</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span>
-                        <span class="hljs-keyword">numeric</span> scale, you can leave off <span class="hljs-keyword">the</span> <span class="hljs-string">'.dataForML.h5'</span>
+  -h, --help            show this help message <span class="hljs-keyword">and</span> exit
+  --prefix<span class="hljs-built_in"> PREFIX </span>     <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> your output build.
+  --test_prefix TEST_PREFIX
+                       <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> the dataset you would like <span class="hljs-keyword">to</span> test against
+                        your reference model. Remember, the model will <span class="hljs-keyword">not</span>
+                        function well <span class="hljs-keyword">if</span> it does <span class="hljs-keyword">not</span> include the same
+                        features, <span class="hljs-keyword">and</span> these features should be on the same
+                        numeric scale, you can leave off the <span class="hljs-string">'.dataForML.h5'</span>
                         suffix.
-  <span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX</span>
-                        Prefix <span class="hljs-keyword">of</span> your reference model <span class="hljs-built_in">file</span>, you can leave off
-                        <span class="hljs-keyword">the</span> <span class="hljs-string">'.joblib'</span> suffix.
-  -v, <span class="hljs-comment">--verbose         Verbose output.</span>
+  --ref_model_prefix REF_MODEL_PREFIX
+                       <span class="hljs-built_in"> Prefix </span>of your reference model file, you can leave off
+                        the <span class="hljs-string">'.joblib'</span> suffix.
+  -v, --verbose         Verbose output.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="genoml-continuous-supervised-test"></a><a href="#genoml-continuous-supervised-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>genoml continuous supervised test</h2>
-<pre><code class="hljs">usage: genoml continuous supervised test [-h] [<span class="hljs-comment">--prefix PREFIX]</span>
-                                         [<span class="hljs-comment">--test_prefix TEST_PREFIX]</span>
-                                         [<span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX]</span>
+<pre><code class="hljs">usage: genoml continuous supervised test [-h] [--prefix PREFIX]
+                                         [--test_prefix TEST_PREFIX]
+                                         [--ref_model_prefix REF_MODEL_PREFIX]
                                          [-v]
 
 optional arguments:
-  -h, <span class="hljs-comment">--help            show this help message and exit</span>
-  <span class="hljs-comment">--prefix PREFIX       Prefix for your output build.</span>
-  <span class="hljs-comment">--test_prefix TEST_PREFIX</span>
-                        Prefix <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> dataset you would like <span class="hljs-built_in">to</span> test against
-                        your reference model. Remember, <span class="hljs-keyword">the</span> model will <span class="hljs-keyword">not</span>
-                        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">well</span> <span class="hljs-title">if</span> <span class="hljs-title">it</span> <span class="hljs-title">does</span> <span class="hljs-title">not</span> <span class="hljs-title">include</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span></span>
-                        features, <span class="hljs-keyword">and</span> these features should be <span class="hljs-keyword">on</span> <span class="hljs-title">the</span> <span class="hljs-title">same</span>
-                        <span class="hljs-keyword">numeric</span> scale, you can leave off <span class="hljs-keyword">the</span> <span class="hljs-string">'.dataForML.h5'</span>
+  -h, --help            show this help message <span class="hljs-keyword">and</span> exit
+  --prefix<span class="hljs-built_in"> PREFIX </span>     <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> your output build.
+  --test_prefix TEST_PREFIX
+                       <span class="hljs-built_in"> Prefix </span><span class="hljs-keyword">for</span> the dataset you would like <span class="hljs-keyword">to</span> test against
+                        your reference model. Remember, the model will <span class="hljs-keyword">not</span>
+                        function well <span class="hljs-keyword">if</span> it does <span class="hljs-keyword">not</span> include the same
+                        features, <span class="hljs-keyword">and</span> these features should be on the same
+                        numeric scale, you can leave off the <span class="hljs-string">'.dataForML.h5'</span>
                         suffix.
-  <span class="hljs-comment">--ref_model_prefix REF_MODEL_PREFIX</span>
-                        Prefix <span class="hljs-keyword">of</span> your reference model <span class="hljs-built_in">file</span>, you can leave off
-                        <span class="hljs-keyword">the</span> <span class="hljs-string">'.joblib'</span> suffix.
-  -v, <span class="hljs-comment">--verbose         Verbose output.</span>
+  --ref_model_prefix REF_MODEL_PREFIX
+                       <span class="hljs-built_in"> Prefix </span>of your reference model file, you can leave off
+                        the <span class="hljs-string">'.joblib'</span> suffix.
+  -v, --verbose         Verbose output.
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/workflow"><span class="arrow-prev">← </span><span>Previous</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#at-a-glance">At a Glance</a></li><li><a href="#genoml-the-root-of-all-commands">genoml - the root of all commands</a></li><li><a href="#genoml-harmonize">genoml harmonize</a></li><li><a href="#genoml-discrete-supervised-munge">genoml discrete supervised munge</a></li><li><a href="#genoml-continuous-supervised-munge">genoml continuous supervised munge</a></li><li><a href="#genoml-discrete-supervised-train">genoml discrete supervised train</a></li><li><a href="#genoml-continuous-supervised-train">genoml continuous supervised train</a></li><li><a href="#genoml-discrete-supervised-tune">genoml discrete supervised tune</a></li><li><a href="#genoml-continuous-supervised-tune">genoml continuous supervised tune</a></li><li><a href="#genoml-discrete-supervised-test">genoml discrete supervised test</a></li><li><a href="#genoml-continuous-supervised-test">genoml continuous supervised test</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/dna.png" alt="GenoML" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/quick-start">Getting Started</a><a href="/docs/contribute">Contributing</a></div><div><h5>Community</h5><a href="/en/users.html">Users</a></div><div><h5>More</h5><a href="https://github.com/GenoML/">GitHub</a><a class="github-button" href="https://github.com/GenoML/genoml" data-icon="octicon-star" data-count-href="/GenoML/genoml/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 GenoML</section></footer></div></body></html>
